@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 // import { notify } from "react-notify-toast"
 import Auth from '../../lib/auth'
-import Logo from '../../assets/nav-logo.png'
+
 import { Navbar, Nav } from 'react-bootstrap'
 import { faCampground } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -33,7 +33,6 @@ class NavBar extends React.Component {
 	}
 
 	render() {
-		const FontAwesome = require('react-fontawesome')
 		const userId = Auth.getPayload().sub
 		console.log(this.props)
 		console.log(Auth.getToken())

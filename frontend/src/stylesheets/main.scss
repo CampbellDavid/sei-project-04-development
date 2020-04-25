@@ -16,6 +16,10 @@ $gray: #9b9b9b;
 	padding-top: 74px;
 }
 
+.main-bg {
+	background-color: #343a40;
+}
+
 // Home
 
 .home-logo {
@@ -25,6 +29,10 @@ $gray: #9b9b9b;
 .center-item-screen {
 	display: flex;
 	justify-content: center;
+}
+
+.bg-home {
+	background-color: #000000;
 }
 
 // Navbar
@@ -45,7 +53,7 @@ $gray: #9b9b9b;
 	align-items: center;
 	min-height: 100vh;
 	font-size: 1.5rem;
-	background-color: #222222;
+	background-color: #000;
 }
 
 .main-heading {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/home/logo.png'
 import ImgOne from '../../assets/home/img-1.png'
 import ImgTwo from '../../assets/home/img-2.png'
 import ImgThree from '../../assets/home/img-3.png'
@@ -10,14 +10,10 @@ import SubImg from '../../assets/home/sub-img.png'
 
 const Home = () => (
 	<section className='home-page body-div'>
-		<div className='center-item-screen'>
+		<div className='center-item-screen bg-home'>
 			<img src={Logo} alt='Logo' className='home-logo' />
 		</div>
-		<div
-			style={{
-				backgroundColor: '#000',
-			}}
-		>
+		<div className='main-bg'>
 			<div class='container-fluid'>
 				<div className='row'>
 					<div className='col-xl-7 p-0'>
@@ -91,7 +87,7 @@ const Home = () => (
 					</div>
 
 					<div className='row'>
-						<div className='col-xl-8 bg-dark'>
+						<div className='col-xl-8 bg-home'>
 							<div className='p-3'>
 								<div className='font text-justify'>
 									<h3>Featured Event: Yosemite Rock Climbing</h3>
@@ -113,7 +109,7 @@ const Home = () => (
 								</div>
 							</div>
 						</div>
-						<div className='col-xl-4 bg-dark'>
+						<div className='col-xl-4 bg-dark p-0'>
 							<div>
 								<img src={SubImg} alt='Yosemite' />
 							</div>
