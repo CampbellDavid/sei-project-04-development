@@ -7,10 +7,10 @@ class Register extends React.Component {
 		emailValid: false,
 		formValid: false,
 		passwordValid: false,
-		formErrors: { email: '', password: '' }
+		formErrors: { email: '', password: '' },
 	}
 
-	handleChange = e => {
+	handleChange = (e) => {
 		const name = e.target.name
 		const value = e.target.value
 		const data = { ...this.state.data, [name]: value }
@@ -40,7 +40,7 @@ class Register extends React.Component {
 			{
 				formErrors: fieldValidationErrors,
 				emailValid: emailValid,
-				passwordValid: passwordValid
+				passwordValid: passwordValid,
 			},
 			this.validateForm
 		)
@@ -48,7 +48,7 @@ class Register extends React.Component {
 
 	validateForm() {
 		this.setState({
-			formValid: this.state.emailValid && this.state.passwordValid
+			formValid: this.state.emailValid && this.state.passwordValid,
 		})
 	}
 
@@ -56,7 +56,7 @@ class Register extends React.Component {
 		return error.length === 0 ? '' : 'has-error'
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		try {
 			await axios.post('/api/register', this.state.data)
@@ -70,7 +70,7 @@ class Register extends React.Component {
 		return (
 			<body className='has-navbar-fixed-top'>
 				<section className='main-body'>
-					<h1 className='main-heading'>Register</h1>
+					<h1 className='main-heading font'>Register</h1>
 					<div className='form-wrapper'>
 						<form onSubmit={this.handleSubmit}>
 							<div className='main-form-group'>

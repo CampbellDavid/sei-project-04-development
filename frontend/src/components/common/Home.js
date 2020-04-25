@@ -1,24 +1,35 @@
 import React from 'react'
-import Background from '../../assets/hero.jpg'
-
-const sectionStyle = {
-	width: '100%',
-	backgroundImage: `url(${Background})`,
-	backgroundRepeat: 'no-repeat',
-	backgroundAttachment: 'fixed',
-	backgroundSize: 'cover'
-}
+import Carousel from 'react-bootstrap/Carousel'
+import Logo from '../../assets/logo.png'
+import ImgOne from '../../assets/home/img-1.png'
+import ImgTwo from '../../assets/home/img-2.png'
+import ImgThree from '../../assets/home/img-3.png'
+import ImgFour from '../../assets/home/img-4.png'
+import ImgFive from '../../assets/home/img-5.png'
 
 const Home = () => (
 	<body className='has-navbar-fixed-top'>
-		<section style={sectionStyle} className='hero is-fullheight-with-navbar'>
-			<div className='container'>
-				<div className='text-container'>
-					<h1 className='heading-hero'>EXTREME Meet Up</h1>
-					<h2 className='slogan-hero'>Destroy your fear.</h2>
-				</div>
+		<div className='container-home'>
+			<div className='carousel-div'>
+				<Carousel>
+					<Carousel.Item>
+						<img className='d-block w-100' src={ImgOne} alt='First slide' />
+					</Carousel.Item>
+					<Carousel.Item>
+						<img className='d-block w-100' src={ImgTwo} alt='Third slide' />
+					</Carousel.Item>
+					<Carousel.Item>
+						<img className='d-block w-100' src={ImgThree} alt='Third slide' />
+					</Carousel.Item>
+					<Carousel.Item>
+						<img className='d-block w-100' src={ImgFour} alt='Third slide' />
+					</Carousel.Item>
+					<Carousel.Item>
+						<img className='d-block w-100' src={ImgFive} alt='Third slide' />
+					</Carousel.Item>
+				</Carousel>
 			</div>
-		</section>
+		</div>
 	</body>
 )
 

@@ -2,17 +2,19 @@ import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 // import { notify } from "react-notify-toast"
 import Auth from '../../lib/auth'
+import Logo from '../../assets/nav-logo.png'
+import { Navbar, Nav } from 'react-bootstrap'
 
 class NavBar extends React.Component {
 	state = {
 		loggedIn: false,
-		navOpen: false
+		navOpen: false,
 	}
 
 	toggleNavbar = () => {
 		this.setState({
 			loggedIn: !this.state.loggedIn,
-			navOpen: !this.state.navOpen
+			navOpen: !this.state.navOpen,
 		})
 	}
 
@@ -33,66 +35,68 @@ class NavBar extends React.Component {
 		console.log(this.props)
 		console.log(Auth.getToken())
 		return (
-			<nav className='navbar is-dark is-fixed-top'>
-				<div className='container'>
-					<div className='navbar-brand'>
-						<Link className='navbar-item' to='/'>
-							HOME
-						</Link>
-						<p
-							className={`navbar-burger ${
-								this.state.navOpen ? 'is-active' : ''
-							}`}
-							onClick={this.toggleNavbar}
-						>
-							<span aria-hidden='true'></span>
-							<span aria-hidden='true'></span>
-							<span aria-hidden='true'></span>
-						</p>
-					</div>
-					<div
-						className={`navbar-menu ${this.state.navOpen ? 'is-active' : ''}`}
-					>
-						<div className='navbar-end'>
-							<Link className='navbar-item' to='/sports'>
-								SPORTS
-							</Link>
-							<Link className='navbar-item' to='/events'>
-								EVENTS
-							</Link>
-							{!Auth.isAuthenticated() && (
-								<Link className='navbar-item' to='/login'>
-									LOGIN
-								</Link>
-							)}
-							{!Auth.isAuthenticated() && (
-								<Link className='navbar-item' to='/register'>
-									REGISTER
-								</Link>
-							)}
-							{Auth.isAuthenticated() && (
-								<Link className='navbar-item' to={`/user/${userId}`}>
-									MY ACCOUNT
-								</Link>
-							)}
-							{Auth.isAuthenticated() && (
-								<Link className='navbar-item' to={`/user/${userId}/cart`}>
-									SHOPPING CART
-								</Link>
-							)}
-							{Auth.isAuthenticated() && (
-								<Link
-									className='navbar-item'
-									to='/'
-									onClick={this.handleLogout}
-								>
-									LOGOUT
-								</Link>
-							)}
-						</div>
-					</div>
-				</div>
-			</nav>
+			<Navbar
+				bg='dark'
+				expand='lg'
+				className='navbar-dark fixed-top'
+				id='mainNav'
+			>
+				<Navbar.Brand href='/'>
+					<img src={Logo} width='120px'></img>
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls='basic-navbar-nav' />
+				<Navbar.Collapse id='basic-navbar-nav'>
+					<Nav className='mr-auto'>
+						<Nav.Link className='nav-link text-light' href='/sports'>
+							SPORTS
+						</Nav.Link>
+
+						<Nav.Link className='nav-link text-light' href='/events'>
+							EVENTS
+						</Nav.Link>
+
+						{!Auth.isAuthenticated() && (
+							<Nav.Link className='nav-link text-light' href='/login'>
+								LOGIN
+							</Nav.Link>
+						)}
+
+						{!Auth.isAuthenticated() && (
+							<Nav.Link className='nav-link text-light' href='/register'>
+								REGISTER
+							</Nav.Link>
+						)}
+
+						{Auth.isAuthenticated() && (
+							<Nav.Link
+								className='nav-link text-light'
+								href={`/user/${userId}`}
+							>
+								MY ACCOUNT
+							</Nav.Link>
+						)}
+
+						{Auth.isAuthenticated() && (
+							<Nav.Link
+								className='nav-link text-light'
+								href={`/user/${userId}/cart`}
+							>
+								SHOPPING CART
+							</Nav.Link>
+						)}
+
+						{Auth.isAuthenticated() && (
+							<Nav.Link
+								className='nav-link text-light'
+								href='/'
+								onClick={this.handleLogout}
+							>
+								LOGOUT
+							</Nav.Link>
+						)}
+					</Nav>
+				</Navbar.Collapse>
+			</Navbar>
 		)
 	}
 }

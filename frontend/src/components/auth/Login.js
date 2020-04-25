@@ -6,9 +6,9 @@ class Login extends React.Component {
 	state = {
 		data: {
 			email: '',
-			password: ''
+			password: '',
 		},
-		error: ''
+		error: '',
 	}
 
 	handleChange = ({ target: { name, value } }) => {
@@ -16,7 +16,7 @@ class Login extends React.Component {
 		this.setState({ data, error: '' })
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		try {
 			const res = await axios.post('/api/login', this.state.data)
@@ -31,7 +31,7 @@ class Login extends React.Component {
 		return (
 			<body className='has-navbar-fixed-top'>
 				<section className='main-body'>
-					<h1 className='main-heading'>Login</h1>
+					<h1 className='main-heading font'>Login</h1>
 					<div className='form-wrapper'>
 						<form onSubmit={this.handleSubmit}>
 							<div className='main-form-group'>
