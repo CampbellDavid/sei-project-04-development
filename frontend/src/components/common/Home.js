@@ -13,19 +13,39 @@ const Home = () => (
 			<div className='carousel-div'>
 				<Carousel>
 					<Carousel.Item>
-						<img className='d-block w-100' src={ImgOne} alt='First slide' />
+						<img
+							className='d-block w-100 carousel-item-img'
+							src={ImgOne}
+							alt='First slide'
+						/>
 					</Carousel.Item>
 					<Carousel.Item>
-						<img className='d-block w-100' src={ImgTwo} alt='Third slide' />
+						<img
+							className='d-block w-100 carousel-item-img'
+							src={ImgTwo}
+							alt='Third slide'
+						/>
 					</Carousel.Item>
 					<Carousel.Item>
-						<img className='d-block w-100' src={ImgThree} alt='Third slide' />
+						<img
+							className='d-block w-100 carousel-item-img'
+							src={ImgThree}
+							alt='Third slide'
+						/>
 					</Carousel.Item>
 					<Carousel.Item>
-						<img className='d-block w-100' src={ImgFour} alt='Third slide' />
+						<img
+							className='d-block w-100 carousel-item-img'
+							src={ImgFour}
+							alt='Third slide'
+						/>
 					</Carousel.Item>
 					<Carousel.Item>
-						<img className='d-block w-100' src={ImgFive} alt='Third slide' />
+						<img
+							className='d-block w-100 carousel-item-img'
+							src={ImgFive}
+							alt='Third slide'
+						/>
 					</Carousel.Item>
 				</Carousel>
 			</div>

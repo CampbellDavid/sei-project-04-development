@@ -26,18 +26,22 @@ $gray: #9b9b9b;
 }
 
 .carousel-div {
-	width: 100vw;
+	width: 75vw;
+	margin-top: 3vw;
+	margin-bottom: 3vw;
+}
+
+.carousel-item-img {
+	border: 2px solid transparent;
+	border-radius: 15px;
 }
 
 // Navbar
 
-.nav-link {
+.nav-link-format {
 	font-family: 'Teko', sans-serif;
-	font-size: 20px;
-}
-
-.navbar-local {
-	color: #fff;
+	font-size: 25px;
+	margin-top: 5px;
 }
 
 // Forms

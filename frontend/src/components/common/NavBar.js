@@ -4,6 +4,8 @@ import { Link, withRouter } from 'react-router-dom'
 import Auth from '../../lib/auth'
 import Logo from '../../assets/nav-logo.png'
 import { Navbar, Nav } from 'react-bootstrap'
+import { faCampground } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class NavBar extends React.Component {
 	state = {
@@ -31,6 +33,7 @@ class NavBar extends React.Component {
 	}
 
 	render() {
+		const FontAwesome = require('react-fontawesome')
 		const userId = Auth.getPayload().sub
 		console.log(this.props)
 		console.log(Auth.getToken())
@@ -41,28 +44,44 @@ class NavBar extends React.Component {
 				className='navbar-dark fixed-top'
 				id='mainNav'
 			>
-				<Navbar.Brand href='/'>
-					<img src={Logo} width='120px'></img>
-				</Navbar.Brand>
+				<Nav className='mr-auto'>
+					<Nav.Link className='nav-link nav-link-format text-light' href='/'>
+						<div>
+							<FontAwesomeIcon icon={faCampground} />
+						</div>
+					</Nav.Link>
+				</Nav>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
-					<Nav className='mr-auto'>
-						<Nav.Link className='nav-link text-light' href='/sports'>
+					<Nav className='ml-auto'>
+						<Nav.Link
+							className='nav-link nav-link-format text-light'
+							href='/sports'
+						>
 							SPORTS
 						</Nav.Link>
 
-						<Nav.Link className='nav-link text-light' href='/events'>
+						<Nav.Link
+							className='nav-link nav-link-format text-light'
+							href='/events'
+						>
 							EVENTS
 						</Nav.Link>
 
 						{!Auth.isAuthenticated() && (
-							<Nav.Link className='nav-link text-light' href='/login'>
+							<Nav.Link
+								className='nav-link nav-link-format text-light'
+								href='/login'
+							>
 								LOGIN
 							</Nav.Link>
 						)}
 
 						{!Auth.isAuthenticated() && (
-							<Nav.Link className='nav-link text-light' href='/register'>
+							<Nav.Link
+								className='nav-link nav-link-format text-light'
+								href='/register'
+							>
 								REGISTER
 							</Nav.Link>
 						)}
