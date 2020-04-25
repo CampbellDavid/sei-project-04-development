@@ -10,7 +10,7 @@ import SubImg from '../../assets/home/sub-img.png'
 
 const Home = () => (
 	<section className='home-page body-div'>
-		<div className='home-logo-wrapper'>
+		<div className='center-item-screen'>
 			<img src={Logo} alt='Logo' className='home-logo' />
 		</div>
 		<div

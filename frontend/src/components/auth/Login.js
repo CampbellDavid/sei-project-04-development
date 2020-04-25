@@ -60,9 +60,10 @@ class Login extends React.Component {
 								Password
 							</label>
 						</div>
-						<hr className='divider' />
-						<div>
-							<button className='button is-rounded' type='submit'>
+						<br />
+						<br />
+						<div className='center-item-screen'>
+							<button className='btn btn-outline-light' type='submit'>
 								Login
 							</button>
 						</div>

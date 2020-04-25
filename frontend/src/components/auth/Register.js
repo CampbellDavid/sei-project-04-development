@@ -137,11 +137,12 @@ class Register extends React.Component {
 							</label>
 						</div>
 
-						<hr className='divider' />
+						<br />
+						<br />
 
-						<div>
+						<div className='center-item-screen'>
 							<button
-								className='button is-rounded'
+								className='btn btn-outline-light'
 								type='submit'
 								disabled={!this.state.formValid}
 							>
