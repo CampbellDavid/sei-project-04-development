@@ -9,6 +9,11 @@ $gray: #9b9b9b;
 
 .font {
 	font-family: 'Teko', sans-serif;
+	color: #fff;
+}
+
+.body-div {
+	padding-top: 74px;
 }
 
 // Home
@@ -24,18 +29,6 @@ $gray: #9b9b9b;
 .logo-home {
 	width: 40vw;
 }
-
-.carousel-div {
-	width: 100vw;
-	// height: 50vh;
-	// margin-top: 3vw;
-	// margin-bottom: 3vw;
-}
-
-// .carousel-item-img {
-// 	border: 2px solid transparent;
-// 	border-radius: 15px;
-// }
 
 // Navbar
 
