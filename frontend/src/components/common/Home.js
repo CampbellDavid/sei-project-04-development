@@ -9,7 +9,12 @@ import ImgFive from '../../assets/home/img-5.png'
 
 const Home = () => (
 	<body className='has-navbar-fixed-top'>
-		<div className='container-home'>
+		<div
+			className='container-home'
+			style={{
+				backgroundColor: '#000',
+			}}
+		>
 			<div className='carousel-div'>
 				<Carousel>
 					<Carousel.Item>

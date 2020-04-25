@@ -46,9 +46,7 @@ class NavBar extends React.Component {
 			>
 				<Nav className='mr-auto'>
 					<Nav.Link className='nav-link nav-link-format text-light' href='/'>
-						<div>
-							<FontAwesomeIcon icon={faCampground} />
-						</div>
+						<FontAwesomeIcon icon={faCampground} />
 					</Nav.Link>
 				</Nav>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
