@@ -9,7 +9,7 @@ class EventDisplay extends React.Component {
 	state = {
 		event: null,
 		groups: null,
-		user: null
+		user: null,
 	}
 
 	async componentDidMount() {
@@ -18,16 +18,16 @@ class EventDisplay extends React.Component {
 			const eventId = this.props.match.params.id
 			await axios
 				.all([
-					axios.get(`/api/events/${eventId}`),
-					axios.get(`/api/events/${eventId}/event_groups`),
-					Auth.getPayload() && axios.get(`/api/user/${userId}`)
+					axios.get(`/api/events/${eventId}/`),
+					axios.get(`/api/events/${eventId}/event_groups/`),
+					Auth.getPayload() && axios.get(`/api/user/${userId}`),
 				])
 				.then(
 					axios.spread((eventRequest, groupsRequest, userRequest) => {
 						this.setState({
 							event: eventRequest.data,
 							groups: groupsRequest.data,
-							user: userRequest.data
+							user: userRequest.data,
 						})
 					})
 				)
@@ -44,7 +44,7 @@ class EventDisplay extends React.Component {
 		const eventId = this.props.match.params.id
 		try {
 			await axios.delete(`/api/events/${eventId}/`, {
-				headers: { Authorization: `Bearer ${Auth.getToken()}` }
+				headers: { Authorization: `Bearer ${Auth.getToken()}` },
 			})
 			this.props.history.push('/events')
 		} catch (err) {
@@ -54,7 +54,7 @@ class EventDisplay extends React.Component {
 
 	addToWishList = async () => {
 		const user = this.state.user
-		const pkArr = user.wish_list.map(event => event.id)
+		const pkArr = user.wish_list.map((event) => event.id)
 		const sendData = { wish_list: pkArr }
 		const userId = Auth.getPayload().sub
 		const eventId = this.state.event.id
@@ -62,7 +62,7 @@ class EventDisplay extends React.Component {
 		pkArr.includes(eventId) ? pkArr.splice(ind, 1) : pkArr.push(eventId)
 		try {
 			await axios.put(`/api/user/${userId}`, sendData, {
-				headers: { Authorization: `Bearer ${Auth.getToken()}` }
+				headers: { Authorization: `Bearer ${Auth.getToken()}` },
 			})
 			window.location.reload(false)
 		} catch (err) {
@@ -72,7 +72,7 @@ class EventDisplay extends React.Component {
 
 	addToShopCart = async () => {
 		const user = this.state.user
-		const pkArr = user.shopping_cart.map(event => event.id)
+		const pkArr = user.shopping_cart.map((event) => event.id)
 		const sendData = { shopping_cart: pkArr }
 		const userId = Auth.getPayload().sub
 		const eventId = this.state.event.id
@@ -80,7 +80,7 @@ class EventDisplay extends React.Component {
 		pkArr.includes(eventId) ? pkArr.splice(ind, 1) : pkArr.push(eventId)
 		try {
 			await axios.put(`/api/user/${userId}`, sendData, {
-				headers: { Authorization: `Bearer ${Auth.getToken()}` }
+				headers: { Authorization: `Bearer ${Auth.getToken()}` },
 			})
 			window.location.reload(false)
 		} catch (err) {
@@ -91,7 +91,7 @@ class EventDisplay extends React.Component {
 	currency = new Intl.NumberFormat('en-GB', {
 		style: 'currency',
 		currency: 'GBP',
-		minimumFractionDigits: 2
+		minimumFractionDigits: 2,
 	})
 
 	render() {
@@ -100,10 +100,10 @@ class EventDisplay extends React.Component {
 
 		const eventDate = this.state.event.time_and_date
 		const eventId = this.state.event.id
-		const wishListArr = this.state.user.wish_list.map(event => event.id)
-		const cartArr = this.state.user.shopping_cart.map(event => event.id)
+		const wishListArr = this.state.user.wish_list.map((event) => event.id)
+		const cartArr = this.state.user.shopping_cart.map((event) => event.id)
 		const filteredGroups = this.state.groups.filter(
-			group => group.event.id === this.state.event.id
+			(group) => group.event.id === this.state.event.id
 		)
 
 		return (
@@ -122,7 +122,7 @@ class EventDisplay extends React.Component {
 					<div>
 						<h3 className='ev-disp-subtitle'>Groups</h3>
 
-						{filteredGroups.map(group => (
+						{filteredGroups.map((group) => (
 							<div className='grp-card-sec'>
 								<GroupCard key={group.id} {...group} />
 							</div>

@@ -5,13 +5,13 @@ import Auth from '../../lib/auth'
 
 class SportDisplay extends React.Component {
 	state = {
-		sport: null
+		sport: null,
 	}
 
 	async componentDidMount() {
 		try {
 			const sportId = this.props.match.params.id
-			const response = await axios.get(`/api/sports/${sportId}`)
+			const response = await axios.get(`/api/sports/${sportId}/`)
 			this.setState({ sport: response.data })
 		} catch (error) {
 			console.log(error)
@@ -26,7 +26,7 @@ class SportDisplay extends React.Component {
 		const sportId = this.props.match.params.id
 		try {
 			await axios.delete(`/api/sports/${sportId}/`, {
-				headers: { Authorization: `Bearer ${Auth.getToken()}` }
+				headers: { Authorization: `Bearer ${Auth.getToken()}` },
 			})
 			this.props.history.push('/sports')
 		} catch (err) {
@@ -58,7 +58,7 @@ class SportDisplay extends React.Component {
 					<div className='events-section'>
 						<h3 className='events-title-spt'>Events:</h3>
 						<p className='sport-card-content'>
-							{this.state.sport.events.map(event => {
+							{this.state.sport.events.map((event) => {
 								return (
 									<Link to={`/events/${event.id}`}>
 										<p className='event-desc-spt-disp'>{event.title}</p>

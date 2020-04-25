@@ -7,7 +7,7 @@ import { headers } from './../../lib/headers'
 class SportAmend extends React.Component {
 	state = {
 		sport: {},
-		errors: null
+		errors: null,
 	}
 
 	async componentDidMount() {
@@ -18,21 +18,21 @@ class SportAmend extends React.Component {
 				sport: {
 					name: response.data.name,
 					image: response.data.image,
-					description: response.data.description
-				}
+					description: response.data.description,
+				},
 			})
 		} catch (error) {
 			console.log(error)
 		}
 	}
 
-	handleChange = e => {
+	handleChange = (e) => {
 		const sport = { ...this.state.sport, [e.target.name]: e.target.value }
 		const errors = { ...this.state.errors, [e.target.name]: '' }
 		this.setState({ sport, errors })
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		const sportId = this.props.match.params.id
 		console.log(sportId)

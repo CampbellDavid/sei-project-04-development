@@ -85,7 +85,7 @@ class NavBar extends React.Component {
 
 						{Auth.isAuthenticated() && (
 							<Nav.Link
-								className='nav-link text-light'
+								className='nav-link nav-link-format text-light'
 								href={`/user/${userId}`}
 							>
 								MY ACCOUNT
@@ -94,7 +94,7 @@ class NavBar extends React.Component {
 
 						{Auth.isAuthenticated() && (
 							<Nav.Link
-								className='nav-link text-light'
+								className='nav-link nav-link-format text-light'
 								href={`/user/${userId}/cart`}
 							>
 								SHOPPING CART
@@ -103,7 +103,7 @@ class NavBar extends React.Component {
 
 						{Auth.isAuthenticated() && (
 							<Nav.Link
-								className='nav-link text-light'
+								className='nav-link nav-link-format text-light'
 								href='/'
 								onClick={this.handleLogout}
 							>

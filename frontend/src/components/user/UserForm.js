@@ -3,7 +3,7 @@ import React from 'react'
 const UserForm = ({ user, handleChange, handleSubmit }) => {
 	return (
 		<section className='form main-body'>
-			<h1 className='main-heading'>User Settings</h1>
+			<h1 className='main-heading font pt-5'>User Settings</h1>
 
 			<form onSubmit={handleSubmit}>
 				<div className='main-form-group'>
@@ -96,12 +96,10 @@ const UserForm = ({ user, handleChange, handleSubmit }) => {
 					/>
 				</div>
 
-				<div className='button-div'>
-					<hr className='divider' />
-					<button className='button is-rounded' type='submit'>
+				<div className='p-4 center-item-screen'>
+					<button className='btn btn-outline-light' type='submit'>
 						Submit
 					</button>
-					<hr className='divider-small' />
 				</div>
 			</form>
 		</section>

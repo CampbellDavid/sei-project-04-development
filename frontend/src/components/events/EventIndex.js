@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom'
 
 class EventIndex extends React.Component {
 	state = {
-		events: null
+		events: null,
 	}
 
 	async componentDidMount() {
 		try {
-			const response = await axios.get('/api/events')
+			const response = await axios.get('/api/events/')
 			this.setState({ events: response.data })
 		} catch (error) {
 			console.log(error)
@@ -26,7 +26,7 @@ class EventIndex extends React.Component {
 			<body className='has-navbar-fixed-top'>
 				<section className='main-body-event'>
 					<h1 className='event-head'>Events</h1>
-					{events.map(event => {
+					{events.map((event) => {
 						return <EventCard key={event.id} {...event} />
 					})}
 

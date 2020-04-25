@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom'
 
 class SportIndex extends React.Component {
 	state = {
-		sports: null
+		sports: null,
 	}
 
 	async componentDidMount() {
 		try {
-			const response = await axios.get('/api/sports')
+			const response = await axios.get('/api/sports/')
 			this.setState({ sports: response.data })
 		} catch (error) {
 			console.log(error)
@@ -27,7 +27,7 @@ class SportIndex extends React.Component {
 				<section className='main-body-sport'>
 					<h1 className='event-head'>Sports</h1>
 					<div className='meta-container-spt-disp'>
-						{sports.map(sport => {
+						{sports.map((sport) => {
 							return (
 								<div className='spt-cd-wrapper'>
 									<SportCard key={sport.id} {...sport} />
