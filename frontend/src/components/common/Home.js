@@ -6,18 +6,21 @@ import ImgTwo from '../../assets/home/img-2.png'
 import ImgThree from '../../assets/home/img-3.png'
 import ImgFour from '../../assets/home/img-4.png'
 import ImgFive from '../../assets/home/img-5.png'
+import SubImg from '../../assets/home/sub-img.png'
 
 const Home = () => (
-	<div className='has-navbar-fixed-top'>
+	<section className='home-page body-div'>
+		<div className='home-logo-wrapper'>
+			<img src={Logo} alt='Logo' className='home-logo' />
+		</div>
 		<div
-			className='container-home body-div'
 			style={{
 				backgroundColor: '#000',
 			}}
 		>
 			<div class='container-fluid'>
 				<div className='row'>
-					<div className='col-md-8 p-0'>
+					<div className='col-xl-7 p-0'>
 						<Carousel>
 							<Carousel.Item>
 								<img
@@ -30,7 +33,7 @@ const Home = () => (
 								<img
 									className='d-block w-100 carousel-item-img'
 									src={ImgTwo}
-									alt='Third slide'
+									alt='Second slide'
 								/>
 							</Carousel.Item>
 							<Carousel.Item>
@@ -56,7 +59,7 @@ const Home = () => (
 							</Carousel.Item>
 						</Carousel>
 					</div>
-					<div className='col-md-4 p-0'>
+					<div className='col-xl-5 p-0'>
 						<div className='p-3'>
 							<div className='font text-justify'>
 								<h2>About Us</h2>
@@ -86,10 +89,40 @@ const Home = () => (
 							</div>
 						</div>
 					</div>
+
+					<div className='row'>
+						<div className='col-xl-8 bg-dark'>
+							<div className='p-3'>
+								<div className='font text-justify'>
+									<h3>Featured Event: Yosemite Rock Climbing</h3>
+									<p>
+										Ullamco commodo laboris exercitation irure reprehenderit.
+										Incididunt velit ipsum commodo aliqua ad est tempor ea. Do
+										ea pariatur qui tempor sit veniam laboris. Officia sunt
+										irure veniam occaecat quis mollit deserunt deserunt. Sunt
+										velit adipisicing enim dolor occaecat magna quis dolor
+										aliquip quis Lorem. Laborum occaecat elit consequat laboris
+										consequat consectetur pariatur excepteur do nostrud.
+									</p>
+								</div>
+								<div className='font text-justify'>
+									<p>
+										Est ad excepteur eu ut velit tempor. In commodo adipisicing
+										eu nostrud. Velit et proident aute voluptate aute sunt.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div className='col-xl-4 bg-dark'>
+							<div>
+								<img src={SubImg} alt='Yosemite' />
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 )
 
 export default Home
