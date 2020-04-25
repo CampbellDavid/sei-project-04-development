@@ -52,7 +52,7 @@ function App() {
 					/>
 					<SecureRoute path='/events/:id/amend' component={EventAmend} />
 					<SecureRoute path='/events/create' component={EventCreate} />
-					<Route path='/events/:id' component={EventDisplay} />
+					<SecureRoute path='/events/:id' component={EventDisplay} />
 					<Route path='/events' component={EventIndex} />
 
 					<SecureRoute path='/sports/:id/amend' component={SportAmend} />
