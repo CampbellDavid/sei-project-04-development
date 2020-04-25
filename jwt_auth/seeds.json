@@ -1,0 +1,163 @@
+[
+	{
+		"model": "jwt_auth.user",
+		"pk": 1,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$hYrEYcJYiuht$x+Ey7knYyasxpzgWmD1u6QNogeEckrHeQsfx1c1P1Fk=",
+			"last_login": null,
+			"is_superuser": true,
+			"username": "admin",
+			"first_name": "Jake",
+			"last_name": "Gyllenhaal",
+			"is_staff": true,
+			"is_active": true,
+			"date_joined": "2020-03-02T15:27:02.536Z",
+			"email": "admin",
+			"profile_image": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE4MDAzNDEwNzk1MjAyMDYy/jake-gyllenhaal-16242387-1-402.jpg",
+			"bio": "I am a hot ma",
+			"sex": "Male",
+			"groups": [],
+			"user_permissions": [],
+			"wish_list": [5],
+			"shopping_cart": [3, 5]
+		}
+	},
+	{
+		"model": "jwt_auth.user",
+		"pk": 2,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$DOKeN0cutLDi$ixrgjPrgFGGO0l6fZcENrRwm1IYpw6jAz6kC8L9jxcM=",
+			"last_login": null,
+			"is_superuser": false,
+			"username": "test",
+			"first_name": "Mila",
+			"last_name": "Kunis",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-03-04T08:26:25.238Z",
+			"email": "test@test.com",
+			"profile_image": "https://www.biography.com/.image/t_share/MTU3NTQ0Njg5OTM3OTUwMzc0/mila-kunis-attends-the-screening-of-the-spy-who-dumped-me-at-hearst-tower-on-july-12-2018-in-new-york-city-photo-by-dimitrios-kambouris_getty-images.jpg",
+			"bio": "Milena Markovna \"Mila\" Kunis is an American actress. In 1991, at the age of seven, she moved from Soviet Ukraine to the United States with her family. After being enrolled in acting classes as an after-school activity, she was soon discovered by an agent.",
+			"sex": "Female",
+			"groups": [],
+			"user_permissions": [],
+			"wish_list": [],
+			"shopping_cart": [4]
+		}
+	},
+	{
+		"model": "jwt_auth.user",
+		"pk": 3,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$cgyYQOCKPxHH$BPyO3oZrFK7xY380XtMUKj2Wf5C6XFUuty5UAhv70Wc=",
+			"last_login": null,
+			"is_superuser": false,
+			"username": "newuser",
+			"first_name": "",
+			"last_name": "",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-03-04T15:01:35.923Z",
+			"email": "ner@user.com",
+			"profile_image": "",
+			"bio": "",
+			"sex": "",
+			"groups": [],
+			"user_permissions": [],
+			"wish_list": [],
+			"shopping_cart": []
+		}
+	},
+	{
+		"model": "jwt_auth.user",
+		"pk": 4,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$SenwX5aQbz1t$9+oNQ1Gl/zbM7webQGQZHKMIcJSrnaYgGFTM/xrKe5I=",
+			"last_login": null,
+			"is_superuser": false,
+			"username": "david",
+			"first_name": "",
+			"last_name": "",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-03-04T15:02:21.913Z",
+			"email": "david@mail.com",
+			"profile_image": "",
+			"bio": "",
+			"sex": "",
+			"groups": [],
+			"user_permissions": [],
+			"wish_list": [],
+			"shopping_cart": []
+		}
+	},
+	{
+		"model": "jwt_auth.user",
+		"pk": 5,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$M8cSK4vNuBqZ$APHosLRz/k2sDoPco0pPlLGm1VW2P86IB2RGmrBet7M=",
+			"last_login": null,
+			"is_superuser": false,
+			"username": "newuser1",
+			"first_name": "Latch",
+			"last_name": "Jack",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-03-04T15:07:20.118Z",
+			"email": "new@user.com",
+			"profile_image": "https://avatars1.githubusercontent.com/u/29612192?s=220&v=4",
+			"bio": "Software Dev at GA - Soon to be rich",
+			"sex": "Male",
+			"groups": [],
+			"user_permissions": [],
+			"wish_list": [],
+			"shopping_cart": []
+		}
+	},
+	{
+		"model": "jwt_auth.user",
+		"pk": 6,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$mNAgRr0OepIf$a7mIPjHy+LVpUGN8kFuuNPnOe9UnQTg15cIwdBhYMpU=",
+			"last_login": null,
+			"is_superuser": false,
+			"username": "hello@hi.com",
+			"first_name": "Michelle",
+			"last_name": "Obama",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-03-04T15:08:49.769Z",
+			"email": "hello@hi.com",
+			"profile_image": "https://www.biography.com/.image/t_share/MTY2NjgyMjEwMDQzMTc1OTkx/michelle_obama_first_official_portrait_as_first_lady.jpg",
+			"bio": "I am an American lawyer, university administrator, and writer, who was the first lady of the United States from 2009 to 2017.",
+			"sex": "Female",
+			"groups": [],
+			"user_permissions": [],
+			"wish_list": [],
+			"shopping_cart": []
+		}
+	},
+	{
+		"model": "jwt_auth.user",
+		"pk": 7,
+		"fields": {
+			"password": "pbkdf2_sha256$150000$2Dtcevaw0QHv$vmlzI0TkL5dKjLhJvj0EAiNo/eba8Vh+Gv8diVELYgc=",
+			"last_login": null,
+			"is_superuser": false,
+			"username": "timbanks",
+			"first_name": "Blake",
+			"last_name": "Lively",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2020-03-04T15:59:05.613Z",
+			"email": "tim@email.com",
+			"profile_image": "https://www.gstatic.com/tv/thumb/persons/323857/323857_v9_bb.jpg",
+			"bio": "Blake Ellender Lively is an American actress. Lively is known for starring as Serena van der Woodsen in the CW drama television series Gossip Girl.",
+			"sex": "Female",
+			"groups": [],
+			"user_permissions": [],
+			"wish_list": [7, 8, 9],
+			"shopping_cart": [6]
+		}
+	}
+]

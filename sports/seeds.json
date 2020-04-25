@@ -1,0 +1,38 @@
+[
+{
+  "model": "sports.sport",
+  "pk": 1,
+  "fields": {
+    "name": "Sky Diving",
+    "image": "https://img.buzzfeed.com/buzzfeed-static/static/2014-04/enhanced/webdr03/11/12/enhanced-buzz-wide-16957-1397232214-14.jpg?downsize=700%3A%2A&output-quality=auto&output-format=auto&output-quality=auto&output-format=auto&downsize=360:*",
+    "owner": 1
+  }
+},
+{
+  "model": "sports.sport",
+  "pk": 2,
+  "fields": {
+    "name": "Bungee Jumping",
+    "image": "https://miro.medium.com/max/3840/1*6q1-rTOP10j1qV9A7ACm_g.jpeg",
+    "owner": 1
+  }
+},
+{
+  "model": "sports.sport",
+  "pk": 3,
+  "fields": {
+    "name": "Rock Climbing",
+    "image": "https://outdoorgearlab-mvnab3pwrvp3t0.stackpathdns.com/photos/15/81/279616_31645_M2.jpg",
+    "owner": 1
+  }
+},
+{
+  "model": "sports.sport",
+  "pk": 4,
+  "fields": {
+    "name": "BMX Training",
+    "image": "https://static01.nyt.com/images/2012/07/20/sports/20bmx_337/20bmx_337-superJumbo.jpg",
+    "owner": 1
+  }
+}
+]
