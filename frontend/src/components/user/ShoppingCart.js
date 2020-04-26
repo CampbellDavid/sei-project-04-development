@@ -56,7 +56,7 @@ class ShoppingCart extends React.Component {
 					{Auth.isAuthenticated() && (
 						<h1 className='title-head font'>Your Shopping Cart:</h1>
 					)}
-					<div className='row'>
+					<div className='row center-item-screen'>
 						{Auth.isAuthenticated() &&
 						this.state.user.shopping_cart.length !== 0 ? (
 							this.state.user.shopping_cart.map((item) => {
@@ -101,17 +101,19 @@ class ShoppingCart extends React.Component {
 						)}
 					</div>
 
-					{Auth.isAuthenticated() &&
-					this.state.user.shopping_cart.length !== 0 ? (
-						<Link to={`/user/${userId}/checkout`}>
-							<button
-								type='button'
-								className='btn btn-outline-light btn-presets'
-							>
-								Checkout
-							</button>
-						</Link>
-					) : null}
+					<div className='center-item-screen'>
+						{Auth.isAuthenticated() &&
+						this.state.user.shopping_cart.length !== 0 ? (
+							<Link to={`/user/${userId}/checkout`}>
+								<button
+									type='button'
+									className='btn btn-outline-light btn-presets'
+								>
+									Checkout
+								</button>
+							</Link>
+						) : null}
+					</div>
 				</div>
 			</section>
 		)

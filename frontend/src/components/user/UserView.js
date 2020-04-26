@@ -29,49 +29,49 @@ class UserView extends React.Component {
 			<section className='body-div bg-set-1'>
 				<div className='body-presets bg-grad'>
 					<h1 className='title-head font'>Profile</h1>
-					<div className='meta-container'>
-						<div className='grid'>
-							<div className='row'>
-								<div className='float-left'>
-									<div className='container-fluid text-center'>
-										<img
-											className='pro-img m-0'
-											src={user.profile_image}
-											alt={user.username}
-										/>
-										<p className='sub-head font ml-0 mr-0 mb-0 mt-3'>
-											{user.first_name} {user.last_name}
-										</p>
-									</div>
+
+					<div className='grid'>
+						<div className='row'>
+							<div className='float-left'>
+								<div className='container-fluid text-center'>
+									<img
+										className='pro-img m-0'
+										src={user.profile_image}
+										alt={user.username}
+									/>
+									<p className='sub-head font ml-0 mr-0 mb-0 mt-3'>
+										{user.first_name} {user.last_name}
+									</p>
 								</div>
 							</div>
-							<div className='row mt-2'>
-								<div className='main-data pr-5'>
-									<div className='mr-4 pr-4'>
-										<p className='content-preset sub-font text-justify'>
-											{user.bio}
-										</p>
-									</div>
-									<span className='content-preset sub-font'>Wish List: </span>
-									{user.wish_list.map((item) => (
-										<p className='content-preset sub-font' key={item.title}>
-											<Link to={`/events/${item.id}`}>{item.title}</Link>
-										</p>
-									))}
-								</div>
-								<div className='p-0'>
-									{this.isOwner() && (
-										<Link to={`/user/${userId}/amend`}>
-											<button
-												className='btn btn-outline-light btn-presets'
-												type='submit'
-											>
-												Account Settings
-											</button>
-										</Link>
-									)}
-								</div>
+						</div>
+						<div className='row mt-2'>
+							<div className='m-2'>
+								<p className='content-preset sub-font text-justify'>
+									{user.bio}
+								</p>
 							</div>
+							<div className='p-2'>
+								<h3 className='content-preset sub-font'>Wish List: </h3>
+								{user.wish_list.map((item) => (
+									<p className='content-preset sub-font' key={item.title}>
+										<Link to={`/events/${item.id}`}>{item.title}</Link>
+									</p>
+								))}
+							</div>
+						</div>
+
+						<div className='center-item-screen'>
+							{this.isOwner() && (
+								<Link to={`/user/${userId}/amend`}>
+									<button
+										className='btn btn-outline-light btn-presets'
+										type='submit'
+									>
+										Account Settings
+									</button>
+								</Link>
+							)}
 						</div>
 					</div>
 				</div>

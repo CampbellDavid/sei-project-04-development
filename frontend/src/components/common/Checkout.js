@@ -47,7 +47,7 @@ class Checkout extends React.Component {
 					<section className='body-div'>
 						<div className='body-presets'>
 							<h1 className='title-head font'>Checkout</h1>
-							<div className='row'>
+							<div className='row center-item-screen'>
 								{user.shopping_cart.map((item) => {
 									return (
 										<Card className='m-3' style={{ width: '18rem' }}>
@@ -79,24 +79,27 @@ class Checkout extends React.Component {
 									)
 								})}
 							</div>
-							<p className='font sub-head'>Total: {this.getTotalPrice()}</p>
-
-							<Link to='/secure_payment'>
-								<button
-									type='button'
-									className='btn btn-outline-light btn-presets'
-								>
-									Proceed to payment
-								</button>
-							</Link>
-							<Link to={`/user/${userId}/cart`}>
-								<button
-									type='button'
-									className='btn btn-outline-light btn-presets'
-								>
-									Back
-								</button>
-							</Link>
+							<div className='center-item-screen'>
+								<p className='font sub-head'>Total: {this.getTotalPrice()}</p>
+							</div>
+							<div className='center-item-screen'>
+								<Link to='/secure_payment'>
+									<button
+										type='button'
+										className='btn btn-outline-light btn-presets'
+									>
+										Proceed to payment
+									</button>
+								</Link>
+								<Link to={`/user/${userId}/cart`}>
+									<button
+										type='button'
+										className='btn btn-outline-light btn-presets'
+									>
+										Back
+									</button>
+								</Link>
+							</div>
 						</div>
 					</section>
 				</div>

@@ -26,13 +26,13 @@ class SportIndex extends React.Component {
 			<section className='bg-set-3 body-div'>
 				<div className='body-presets bg-grad'>
 					<h1 className='title-head font'>Sports</h1>
-					<div className='row'>
+					<div className='row center-item-screen'>
 						{sports.map((sport) => {
 							return <SportCard key={sport.id} {...sport} />
 						})}
 					</div>
 
-					<div className='m-4'>
+					<div className='m-4 center-item-screen'>
 						{Auth.isAuthenticated() ? (
 							<Link to='/sports/create'>
 								<button
