@@ -31,18 +31,20 @@ class UserView extends React.Component {
 					<h1 className='title-head font'>Profile</h1>
 					<div className='meta-container'>
 						<div className='profile-card'>
-							<div className='container-fluid text-center'>
-								<img
-									className='pro-img m-0'
-									src={user.profile_image}
-									alt={user.username}
-								/>
+							<div className='float-left col-md-4'>
+								<div className='container-fluid text-center'>
+									<img
+										className='pro-img m-0'
+										src={user.profile_image}
+										alt={user.username}
+									/>
 
-								<p className='sub-head font ml-0 mr-0 mb-0 mt-3'>
-									{user.first_name} {user.last_name}
-								</p>
+									<p className='sub-head font ml-0 mr-0 mb-0 mt-3'>
+										{user.first_name} {user.last_name}
+									</p>
+								</div>
 							</div>
-							<div className='profile-data'>
+							<div className='profile-data col-md-8'>
 								<div className='main-data'>
 									<p className='sub-head-2 font'>{user.sex}</p>
 
