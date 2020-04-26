@@ -56,11 +56,13 @@ class GroupAmend extends React.Component {
 		console.log(this.state)
 		return (
 			<div className='body-div'>
-				<GroupForm
-					data={this.state.data}
-					handleChange={this.handleChange}
-					handleSubmit={this.handleSubmit}
-				/>
+				<section className='form'>
+					<GroupForm
+						data={this.state.data}
+						handleChange={this.handleChange}
+						handleSubmit={this.handleSubmit}
+					/>
+				</section>
 			</div>
 		)
 	}

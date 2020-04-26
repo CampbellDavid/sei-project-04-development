@@ -6,21 +6,21 @@ import SportForm from './SportForm'
 class SportCreate extends React.Component {
 	state = {
 		sport: {},
-		errors: null
+		errors: null,
 	}
 
-	handleChange = e => {
+	handleChange = (e) => {
 		const sport = { ...this.state.sport, [e.target.name]: e.target.value }
 		const errors = { ...this.state.errors, [e.target.name]: '' }
 		this.setState({ sport, errors })
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		console.log(this.state.sport)
 		try {
 			const response = await axios.post('/api/sports/', this.state.sport, {
-				headers: { Authorization: `Bearer ${Auth.getToken()}` }
+				headers: { Authorization: `Bearer ${Auth.getToken()}` },
 			})
 			this.props.history.push(`/sports/${response.data.id}`)
 		} catch (error) {
@@ -30,7 +30,7 @@ class SportCreate extends React.Component {
 
 	render() {
 		return (
-			<body className='has-navbar-fixed-top'>
+			<div className='body-div'>
 				<section className='form'>
 					<SportForm
 						sport={this.state.sport}
@@ -38,7 +38,7 @@ class SportCreate extends React.Component {
 						handleSubmit={this.handleSubmit}
 					/>
 				</section>
-			</body>
+			</div>
 		)
 	}
 }

@@ -53,14 +53,16 @@ class SportAmend extends React.Component {
 		console.log(this.state.sport)
 		if (!this.state.sport) return null
 		return (
-			<body className='has-navbar-fixed-top'>
-				<SportForm
-					sport={this.state.sport}
-					handleChange={this.handleChange}
-					handleSubmit={this.handleSubmit}
-					errors={this.state.errors}
-				/>
-			</body>
+			<div className='body-div'>
+				<section className='form'>
+					<SportForm
+						sport={this.state.sport}
+						handleChange={this.handleChange}
+						handleSubmit={this.handleSubmit}
+						errors={this.state.errors}
+					/>
+				</section>
+			</div>
 		)
 	}
 }

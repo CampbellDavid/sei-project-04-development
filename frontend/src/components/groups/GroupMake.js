@@ -6,8 +6,8 @@ import GroupForm from './GroupForm'
 class GroupMake extends React.Component {
 	state = {
 		group: {
-			group_name: ''
-		}
+			group_name: '',
+		},
 	}
 
 	handleChange = ({ target: { name, value } }) => {
@@ -15,7 +15,7 @@ class GroupMake extends React.Component {
 		this.setState({ group })
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		const eventId = this.props.match.params.id
 		try {
@@ -23,7 +23,7 @@ class GroupMake extends React.Component {
 				`/api/events/${eventId}/event_groups/`,
 				this.state.group,
 				{
-					headers: { Authorization: `Bearer ${Auth.getToken()}` }
+					headers: { Authorization: `Bearer ${Auth.getToken()}` },
 				}
 			)
 			this.props.history.push(`/events/${eventId}/`)
@@ -35,13 +35,15 @@ class GroupMake extends React.Component {
 
 	render() {
 		return (
-			<body className='has-navbar-fixed-top'>
-				<GroupForm
-					team={this.state.team}
-					handleChange={this.handleChange}
-					handleSubmit={this.handleSubmit}
-				/>
-			</body>
+			<div className='body-div'>
+				<section className='form'>
+					<GroupForm
+						team={this.state.team}
+						handleChange={this.handleChange}
+						handleSubmit={this.handleSubmit}
+					/>
+				</section>
+			</div>
 		)
 	}
 }

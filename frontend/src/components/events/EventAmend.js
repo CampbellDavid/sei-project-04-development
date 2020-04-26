@@ -63,14 +63,16 @@ class EventAmend extends React.Component {
 		if (!this.state.sportOps) return null
 		console.log(this.state)
 		return (
-			<body className='has-navbar-fixed-top'>
-				<EventForm
-					data={this.state.data}
-					sportOps={this.state.sportOps}
-					handleChange={this.handleChange}
-					handleSubmit={this.handleSubmit}
-				/>
-			</body>
+			<div className='body-div'>
+				<section className='form'>
+					<EventForm
+						data={this.state.data}
+						sportOps={this.state.sportOps}
+						handleChange={this.handleChange}
+						handleSubmit={this.handleSubmit}
+					/>
+				</section>
+			</div>
 		)
 	}
 }
