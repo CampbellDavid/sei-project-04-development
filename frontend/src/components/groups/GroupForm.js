@@ -2,8 +2,11 @@ import React from 'react'
 
 const GroupForm = ({ handleChange, handleSubmit }) => {
 	return (
-		<section className='main-body'>
-			<div className='form-wrapper'>
+		<section className='bg-black form-body'>
+			<div className='body-presets'>
+				<div className='center-item-screen'>
+					<h1 className='title-head font'>New Group</h1>
+				</div>
 				<form onSubmit={handleSubmit}>
 					<div className='main-form-group'>
 						<input
@@ -18,9 +21,9 @@ const GroupForm = ({ handleChange, handleSubmit }) => {
 							Group Name
 						</label>
 					</div>
-					<hr className='divider' />
-					<div className='button-div'>
-						<button className='button is-rounded' type='submit'>
+
+					<div className='center-item-screen p-4'>
+						<button className='btn btn-outline-light btn-presets' type='submit'>
 							Submit
 						</button>
 					</div>
