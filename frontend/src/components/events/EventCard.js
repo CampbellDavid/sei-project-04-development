@@ -18,7 +18,7 @@ const EventCard = ({
 	description,
 }) => (
 	<Card className='m-3' style={{ width: '18rem' }}>
-		<Card.Img variant='top' src={image} />
+		<Card.Img style={{ height: '30%' }} variant='top' src={image} />
 		<Card.Body className='d-flex flex-column'>
 			<Card.Title>{title}</Card.Title>
 			<Card.Text className='text-justify' style={{ fontSize: '12px' }}>
