@@ -23,30 +23,28 @@ class SportIndex extends React.Component {
 		const sports = this.state.sports
 		console.log('sports:', sports)
 		return (
-			<body className='has-navbar-fixed-top'>
-				<section className='main-body-sport'>
-					<h1 className='event-head'>Sports</h1>
-					<div className='meta-container-spt-disp'>
-						{sports.map((sport) => {
-							return (
-								<div className='spt-cd-wrapper'>
-									<SportCard key={sport.id} {...sport} />
-								</div>
-							)
-						})}
-					</div>
-					<hr className='divider-small' />
-					<div>
-						{Auth.isAuthenticated() ? (
-							<Link to='/sports/create'>
-								<button type='button' className='button is-rounded'>
-									Create Sport
-								</button>
-							</Link>
-						) : null}
-					</div>
-				</section>
-			</body>
+			<section className='main-body-sport'>
+				<h1 className='event-head font pt-5'>Sports</h1>
+				<div className='meta-container-spt-disp'>
+					{sports.map((sport) => {
+						return (
+							<div className='spt-cd-wrapper'>
+								<SportCard key={sport.id} {...sport} />
+							</div>
+						)
+					})}
+				</div>
+
+				<div className='m-4'>
+					{Auth.isAuthenticated() ? (
+						<Link to='/sports/create'>
+							<button type='button' className='btn btn-outline-light'>
+								Create Sport
+							</button>
+						</Link>
+					) : null}
+				</div>
+			</section>
 		)
 	}
 }

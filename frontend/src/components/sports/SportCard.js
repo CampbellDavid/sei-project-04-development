@@ -1,19 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Card, Button } from 'react-bootstrap'
 
 const SportCard = ({ id, name, image }) => (
-	<>
-		<Link to={`/sports/${id}`}>
-			<div className='sport-card'>
-				<div className='card-info'>
-					<h2 className='sport-card-title'>{name}</h2>
-
-					<div>
-						<img src={image} alt={name} className='sport-card-img' />
-					</div>
-				</div>
+	<Card className='m-3' style={{ width: '18rem' }}>
+		<Card.Img variant='top' src={image} />
+		<Card.Body>
+			<Card.Title>{name}</Card.Title>
+			<div className='center-item-screen'>
+				<Button variant='dark' href={`events/${id}`}>
+					View Sport
+				</Button>
 			</div>
-		</Link>
-	</>
+		</Card.Body>
+	</Card>
 )
 export default SportCard
