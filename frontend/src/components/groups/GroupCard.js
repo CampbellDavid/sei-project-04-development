@@ -102,7 +102,7 @@ class GroupCard extends React.Component {
 						<h2 className='font sub-head'>Group Name: '{group.group_name}'</h2>
 					</div>
 					{lead && <h3 className='font sub-head-2'>Leader: {lead.username}</h3>}
-					<h3 className='font sub-head-2'>Attendees: </h3>
+
 					{group.attendees !== null ? (
 						<div className='row'>
 							{group.attendees.map((attendee, i) => {
