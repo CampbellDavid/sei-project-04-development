@@ -107,121 +107,125 @@ class EventDisplay extends React.Component {
 		)
 
 		return (
-			<section className='bg-black body-div'>
-				<div className='body-presets'>
-					<h1 className='title-head font'>{this.state.event.title}</h1>
-					<div className='row'>
-						<div className='col-lg-6'>
-							<h3 className='sub-head font'>
-								{this.state.event.price === 0
-									? 'Free'
-									: this.currency.format(this.state.event.price)}{' '}
-								| {this.state.event.location} |{' '}
-								{Moment(eventDate).format('lll')}
-							</h3>
+			<div className='bg-set-9'>
+				<div className='bg-grad'>
+					<section className='body-div'>
+						<div className='body-presets'>
+							<h1 className='title-head font'>{this.state.event.title}</h1>
+							<div className='row'>
+								<div className='col-lg-6'>
+									<h3 className='sub-head font'>
+										{this.state.event.price === 0
+											? 'Free'
+											: this.currency.format(this.state.event.price)}{' '}
+										| {this.state.event.location} |{' '}
+										{Moment(eventDate).format('lll')}
+									</h3>
 
-							<p className='desc-preset sub-font text-justify'>
-								{this.state.event.description}
-							</p>
-							<div className='center-item-screen'>
-								<div className='buttons mt-3 mb-3'>
-									{Auth.isAuthenticated() ? (
-										wishListArr && wishListArr.includes(eventId) ? (
-											<button
-												className='btn btn-outline-light btn-presets'
-												type='button'
-												onClick={this.addToWishList}
-											>
-												Remove from Wishlist
-											</button>
-										) : (
-											<button
-												className='btn btn-outline-light btn-presets'
-												type='button'
-												onClick={this.addToWishList}
-											>
-												Add to Wishlist
-											</button>
-										)
-									) : null}
+									<p className='desc-preset sub-font text-justify'>
+										{this.state.event.description}
+									</p>
+									<div className='center-item-screen'>
+										<div className='buttons mt-3 mb-3'>
+											{Auth.isAuthenticated() ? (
+												wishListArr && wishListArr.includes(eventId) ? (
+													<button
+														className='btn btn-outline-light btn-presets'
+														type='button'
+														onClick={this.addToWishList}
+													>
+														Remove from Wishlist
+													</button>
+												) : (
+													<button
+														className='btn btn-outline-light btn-presets'
+														type='button'
+														onClick={this.addToWishList}
+													>
+														Add to Wishlist
+													</button>
+												)
+											) : null}
 
-									<>
-										{Auth.isAuthenticated() ? (
-											cartArr && cartArr.includes(eventId) ? (
-												<button
-													className='btn btn-outline-light btn-presets'
-													type='button'
-													onClick={this.addToShopCart}
-												>
-													Remove from Cart
-												</button>
-											) : (
-												<button
-													className='btn btn-outline-light btn-presets'
-													type='button'
-													onClick={this.addToShopCart}
-												>
-													Add to Cart
-												</button>
-											)
-										) : null}
-									</>
-
-									{Auth.isAuthenticated() ? (
-										<>
-											{this.isOwner() && (
-												<div>
-													<Link to={`/events/${eventId}/amend`}>
+											<>
+												{Auth.isAuthenticated() ? (
+													cartArr && cartArr.includes(eventId) ? (
 														<button
 															className='btn btn-outline-light btn-presets'
 															type='button'
+															onClick={this.addToShopCart}
 														>
-															Amend Event
+															Remove from Cart
 														</button>
-													</Link>
-													<button
-														className='btn btn-danger btn-presets'
-														type='button'
-														onClick={this.deleteEvent}
-													>
-														Delete Event
-													</button>
-												</div>
-											)}
-										</>
-									) : null}
+													) : (
+														<button
+															className='btn btn-outline-light btn-presets'
+															type='button'
+															onClick={this.addToShopCart}
+														>
+															Add to Cart
+														</button>
+													)
+												) : null}
+											</>
+
+											{Auth.isAuthenticated() ? (
+												<>
+													{this.isOwner() && (
+														<div>
+															<Link to={`/events/${eventId}/amend`}>
+																<button
+																	className='btn btn-outline-light btn-presets'
+																	type='button'
+																>
+																	Amend Event
+																</button>
+															</Link>
+															<button
+																className='btn btn-danger btn-presets'
+																type='button'
+																onClick={this.deleteEvent}
+															>
+																Delete Event
+															</button>
+														</div>
+													)}
+												</>
+											) : null}
+										</div>
+									</div>
+								</div>
+								<div className='col-lg-6'>
+									<img
+										src={this.state.event.image}
+										alt={this.state.event.title}
+										className='img-disp mr-4 mb-3 img-responsive'
+									/>
+								</div>
+							</div>
+							<div className='row'>
+								<div className='col-lg-12'>
+									<h3 className='sub-head font'>Groups</h3>
+
+									{filteredGroups.map((group) => (
+										<div className='grp-card-sec'>
+											<GroupCard key={group.id} {...group} />
+										</div>
+									))}
+									<Link to={`/events/${eventId}/event_groups/create`}>
+										<button
+											className='btn btn-outline-light btn-presets'
+											type='button'
+										>
+											Create New Group
+										</button>
+									</Link>
 								</div>
 							</div>
 						</div>
-						<div className='col-lg-6'>
-							<img
-								src={this.state.event.image}
-								alt={this.state.event.title}
-								className='img-disp mr-4 mb-3 img-responsive'
-							/>
-						</div>
-					</div>
-					<div className='row'>
-						<div className='col-lg-12'>
-							<h3 className='sub-head font'>Groups</h3>
-
-							{filteredGroups.map((group) => (
-								<div className='grp-card-sec'>
-									<GroupCard key={group.id} {...group} />
-								</div>
-							))}
-							<Link to={`/events/${eventId}/event_groups/create`}>
-								<button
-									className='btn btn-outline-light btn-presets'
-									type='button'
-								>
-									Create New Group
-								</button>
-							</Link>
-						</div>
-					</div>
+					</section>
 				</div>
-			</section>
+			</div>
 		)
 	}
 }
