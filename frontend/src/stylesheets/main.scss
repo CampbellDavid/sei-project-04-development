@@ -203,7 +203,7 @@ $gray: #9b9b9b;
 // User Profile
 
 .pro-img {
-	border: 3px solid $white;
+	border: 3px solid #ffffff;
 	border-radius: 50%;
 	height: 300px;
 	width: 300px;
@@ -234,10 +234,6 @@ $gray: #9b9b9b;
 	display: flex;
 	justify-content: flex-start;
 	padding: 10px;
-}
-
-.profile-container {
-	margin: 30px;
 }
 
 .pro-bg-img {
