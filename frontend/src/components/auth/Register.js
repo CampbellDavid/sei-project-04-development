@@ -142,7 +142,7 @@ class Register extends React.Component {
 
 							<div className='center-item-screen'>
 								<button
-									className='btn btn-outline-light'
+									className='btn btn-outline-light btn-presets'
 									type='submit'
 									disabled={!this.state.formValid}
 								>

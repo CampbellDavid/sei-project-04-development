@@ -66,7 +66,10 @@ class Login extends React.Component {
 							<br />
 							<br />
 							<div className='center-item-screen'>
-								<button className='btn btn-outline-light' type='submit'>
+								<button
+									className='btn btn-outline-light btn-presets'
+									type='submit'
+								>
 									Login
 								</button>
 							</div>

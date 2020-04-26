@@ -97,7 +97,7 @@ class ShoppingCart extends React.Component {
 								)
 							})
 						) : (
-							<p className='cart-head'>Your cart is empty!</p>
+							<p className='sub-head-2 font ml-5 mt-1'>Your cart is empty!</p>
 						)}
 					</div>
 
