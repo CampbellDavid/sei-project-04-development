@@ -116,11 +116,11 @@ const EventForm = ({ data, handleChange, handleSubmit }) => {
 										Sport
 									</label>
 								</div>
-								<hr className='divider' />
+
 								<div className='center-item-screen'>
 									<button
 										type='submit'
-										className='btn btn-outline-light btn-presets'
+										className='btn btn-outline-light btn-presets mt-5'
 									>
 										Submit
 									</button>
