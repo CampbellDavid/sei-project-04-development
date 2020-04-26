@@ -3,13 +3,8 @@ import Auth from '../../lib/auth'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 // import GroupAmend from './GroupAmend'
-import {
-	faTrash,
-	faEdit,
-	faPlus,
-	faMinus,
-} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { Card, Button } from 'react-bootstrap'
 
 class GroupCard extends React.Component {
 	state = {
@@ -107,31 +102,36 @@ class GroupCard extends React.Component {
 						<h2 className='font sub-head'>Group Name: '{group.group_name}'</h2>
 					</div>
 					{lead && <h3 className='font sub-head-2'>Leader: {lead.username}</h3>}
+					<h3 className='font sub-head-2'>Attendees: </h3>
 					{group.attendees !== null ? (
-						<h3 className='font sub-head-2'>
-							Attendees:
+						<div className='row'>
 							{group.attendees.map((attendee, i) => {
 								return (
-									<Link
-										key={i}
-										className='meta-user-card'
-										to={`/user/${attendee.id}`}
-									>
-										<div>
-											<p className='user-name-grp'>
-												{attendee.first_name} {attendee.last_name}
-											</p>
+									<Card className='m-3' style={{ width: '14rem' }}>
+										<Card.Img
+											variant='top'
+											src={attendee.profile_image}
+											alt={attendee.username}
+										/>
+										<Card.Body className='d-flex flex-column'>
+											<div className='mt-auto'>
+												<div className='center-item-screen mb-1'>
+													<Card.Subtitle>
+														{attendee.first_name} {attendee.last_name}
+													</Card.Subtitle>
+												</div>
 
-											<img
-												className='user-img-card'
-												src={attendee.profile_image}
-												alt={attendee.username}
-											/>
-										</div>
-									</Link>
+												<div className='center-item-screen'>
+													<Button variant='dark' href={`/user/${attendee.id}`}>
+														View User
+													</Button>
+												</div>
+											</div>
+										</Card.Body>
+									</Card>
 								)
 							})}
-						</h3>
+						</div>
 					) : null}
 
 					{group.attendees !== null ? (
