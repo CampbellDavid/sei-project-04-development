@@ -27,11 +27,11 @@ class UserView extends React.Component {
 		const user = this.state.user
 		return (
 			<section className='pro-body is-fullheight-with-navbar'>
-				<div className='is-fullwidth top-div'></div>
+				{/* <h1 className='title-head font pt-5'>Profile</h1> */}
 				<div className='meta-container'>
 					<div className='profile-container'>
 						<div className='profile-card'>
-							<div className='pro-img-div pb-3'>
+							<div className='pro-img-div mt-5'>
 								<img
 									className='pro-img'
 									src={user.profile_image}

@@ -24,7 +24,7 @@ class SportIndex extends React.Component {
 		console.log('sports:', sports)
 		return (
 			<section className='main-body-sport'>
-				<h1 className='event-head font pt-5'>Sports</h1>
+				<h1 className='title-head font pt-5'>Sports</h1>
 				<div className='meta-container-spt-disp'>
 					{sports.map((sport) => {
 						return (

@@ -20,6 +20,20 @@ $gray: #9b9b9b;
 	background-color: #343a40;
 }
 
+.title-head {
+	color: $white;
+	margin-bottom: 10px;
+	font-size: 50px;
+	margin: 0 0 10px 10px;
+}
+
+.sub-head {
+	color: $white;
+	margin-bottom: 10px;
+	font-size: 40px;
+	margin: 0 0 10px 10px;
+}
+
 // Home
 
 .home-logo {
@@ -253,13 +267,6 @@ $gray: #9b9b9b;
 	background-color: #000;
 }
 
-.event-head {
-	color: $white;
-	margin-bottom: 10px;
-	font-size: 50px;
-	margin: 0 0 10px 10px;
-}
-
 .event-box {
 	display: flex;
 	flex-direction: row;
@@ -275,7 +282,7 @@ $gray: #9b9b9b;
 	padding: 40px;
 	min-height: 100vh;
 	font-size: 1.5rem;
-	background-color: #222222;
+	background-color: #000;
 }
 
 .event-disp-head {
@@ -417,10 +424,6 @@ $gray: #9b9b9b;
 	width: max-content;
 }
 
-.events-title-spt {
-	color: $white;
-}
-
 .main-body-sport-disp {
 	font-family: Arial, Helvetica, sans-serif;
 	display: flex;
@@ -428,14 +431,7 @@ $gray: #9b9b9b;
 	padding: 40px;
 	min-height: 100vh;
 	font-size: 1.5rem;
-	background-color: #222222;
-}
-
-.sport-disp-head {
-	color: $white;
-	margin-bottom: 10px;
-	font-size: 30px;
-	margin: 0 0 10px 10px;
+	background-color: #000;
 }
 
 .sport-arr-btn {
@@ -447,13 +443,6 @@ $gray: #9b9b9b;
 	color: $white;
 	margin: 5px;
 	font-size: 18px;
-}
-
-.sport-disp-title {
-	color: $white;
-	margin: 5px;
-	font-size: 22px;
-	font-weight: 800;
 }
 
 .sport-img-disp {

@@ -107,101 +107,101 @@ class EventDisplay extends React.Component {
 		)
 
 		return (
-			<body className='has-navbar-fixed-top'>
-				<section className='main-body-event-disp'>
-					<h1 className='ev-disp-title'>{this.state.event.title}</h1>
-					<h3 className='ev-disp-subtitle'>
-						Price:{' '}
-						{this.state.event.price === 0
-							? 'Free'
-							: this.currency.format(this.state.event.price)}{' '}
-						| {Moment(eventDate).format('lll')} | {this.state.event.location}
-					</h3>
+			<section className='main-body-event-disp'>
+				<h1 className='ev-disp-title'>{this.state.event.title}</h1>
+				<img
+					src={this.state.event.image}
+					alt={this.state.event.title}
+					className='img-responsive'
+				/>
+				<h3 className='ev-disp-subtitle'>
+					Price:{' '}
+					{this.state.event.price === 0
+						? 'Free'
+						: this.currency.format(this.state.event.price)}{' '}
+					| {Moment(eventDate).format('lll')} | {this.state.event.location}
+				</h3>
 
-					<p className='ev-disp-subtitle'>{this.state.event.description}</p>
-					<div>
-						<h3 className='ev-disp-subtitle'>Groups</h3>
+				<p className='ev-disp-subtitle'>{this.state.event.description}</p>
+				<div>
+					<h3 className='ev-disp-subtitle'>Groups</h3>
 
-						{filteredGroups.map((group) => (
-							<div className='grp-card-sec'>
-								<GroupCard key={group.id} {...group} />
-							</div>
-						))}
-					</div>
-					<hr className='divider-small' />
-					<div className='buttons'>
+					{filteredGroups.map((group) => (
+						<div className='grp-card-sec'>
+							<GroupCard key={group.id} {...group} />
+						</div>
+					))}
+				</div>
+				<hr className='divider-small' />
+				<div className='buttons'>
+					{Auth.isAuthenticated() ? (
+						wishListArr && wishListArr.includes(eventId) ? (
+							<button
+								className='button is-rounded arr-btn'
+								onClick={this.addToWishList}
+							>
+								Remove from Wishlist
+							</button>
+						) : (
+							<button
+								className='button is-rounded arr-btn'
+								onClick={this.addToWishList}
+							>
+								Add to Wishlist
+							</button>
+						)
+					) : null}
+
+					<>
 						{Auth.isAuthenticated() ? (
-							wishListArr && wishListArr.includes(eventId) ? (
+							cartArr && cartArr.includes(eventId) ? (
 								<button
 									className='button is-rounded arr-btn'
-									onClick={this.addToWishList}
+									onClick={this.addToShopCart}
 								>
-									Remove from Wishlist
+									Remove from Cart
 								</button>
 							) : (
 								<button
 									className='button is-rounded arr-btn'
-									onClick={this.addToWishList}
+									onClick={this.addToShopCart}
 								>
-									Add to Wishlist
+									Add to Cart
 								</button>
 							)
 						) : null}
+					</>
 
+					{Auth.isAuthenticated() ? (
 						<>
-							{Auth.isAuthenticated() ? (
-								cartArr && cartArr.includes(eventId) ? (
-									<button
-										className='button is-rounded arr-btn'
-										onClick={this.addToShopCart}
-									>
-										Remove from Cart
-									</button>
-								) : (
-									<button
-										className='button is-rounded arr-btn'
-										onClick={this.addToShopCart}
-									>
-										Add to Cart
-									</button>
-								)
-							) : null}
-						</>
+							<Link to={`/events/${eventId}/event_groups/create`}>
+								<button
+									type='button is-rounded'
+									className='button is-rounded arr-btn'
+								>
+									Create New Group
+								</button>
+							</Link>
 
-						{Auth.isAuthenticated() ? (
-							<>
-								<Link to={`/events/${eventId}/event_groups/create`}>
-									<button
-										type='button is-rounded'
-										className='button is-rounded arr-btn'
-									>
-										Create New Group
-									</button>
-								</Link>
-
-								{this.isOwner() && (
-									<div>
-										<Link to={`/events/${eventId}/amend`}>
-											<button
-												className='button is-rounded arr-btn'
-												type='button'
-											>
-												Amend Event
-											</button>
-										</Link>
-										<button
-											className='button is-rounded is-danger arr-btn'
-											onClick={this.deleteEvent}
-										>
-											Delete Event
+							{this.isOwner() && (
+								<div>
+									<Link to={`/events/${eventId}/amend`}>
+										<button className='button is-rounded arr-btn' type='button'>
+											Amend Event
 										</button>
-									</div>
-								)}
-							</>
-						) : null}
-					</div>
-				</section>
-			</body>
+									</Link>
+									<button
+										className='button is-rounded is-danger arr-btn'
+										onClick={this.deleteEvent}
+									>
+										Delete Event
+									</button>
+								</div>
+							)}
+						</>
+					) : null}
+				</div>
+			</section>
 		)
 	}
 }

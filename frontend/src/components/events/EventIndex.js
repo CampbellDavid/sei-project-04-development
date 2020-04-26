@@ -24,7 +24,7 @@ class EventIndex extends React.Component {
 		console.log('events:', events)
 		return (
 			<section className='main-body-event'>
-				<h1 className='event-head font pt-5'>Events</h1>
+				<h1 className='title-head font pt-5'>Events</h1>
 				<div className='event-box'>
 					{events.map((event) => {
 						return <EventCard key={event.id} {...event} />

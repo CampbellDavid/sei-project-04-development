@@ -113,7 +113,7 @@ const EventForm = ({ data, handleChange, handleSubmit }) => {
 					</div>
 					<hr className='divider' />
 					<div className='button-div'>
-						<button className='button is-rounded' type='submit'>
+						<button type='button' className='btn btn-outline-light'>
 							Submit
 						</button>
 					</div>
