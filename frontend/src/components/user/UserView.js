@@ -30,34 +30,36 @@ class UserView extends React.Component {
 				<div className='body-presets'>
 					<h1 className='title-head font'>Profile</h1>
 					<div className='meta-container'>
-						<div className='profile-card'>
-							<div className='float-left col-md-4'>
-								<div className='container-fluid text-center'>
-									<img
-										className='pro-img m-0'
-										src={user.profile_image}
-										alt={user.username}
-									/>
-
-									<p className='sub-head font ml-0 mr-0 mb-0 mt-3'>
-										{user.first_name} {user.last_name}
-									</p>
+						<div className='grid'>
+							<div className='row'>
+								<div className='float-left'>
+									<div className='container-fluid text-center'>
+										<img
+											className='pro-img m-0'
+											src={user.profile_image}
+											alt={user.username}
+										/>
+										<p className='sub-head font ml-0 mr-0 mb-0 mt-3'>
+											{user.first_name} {user.last_name}
+										</p>
+									</div>
 								</div>
 							</div>
-							<div className='profile-data col-md-8'>
-								<div className='main-data'>
-									<p className='sub-head-2 font'>{user.sex}</p>
-
-									<p className='sub-head-2 font'>{user.bio}</p>
-
-									<span className='user-info'>Wish List: </span>
+							<div className='row mt-2'>
+								<div className='main-data pr-5'>
+									<div className='mr-4 pr-4'>
+										<p className='content-preset sub-font text-justify'>
+											{user.bio}
+										</p>
+									</div>
+									<span className='content-preset sub-font'>Wish List: </span>
 									{user.wish_list.map((item) => (
-										<p className='user-info' key={item.title}>
-											{item.title}
+										<p className='content-preset sub-font' key={item.title}>
+											<Link to={`/events/${item.id}`}>{item.title}</Link>
 										</p>
 									))}
 								</div>
-								<div className='p-4'>
+								<div className='p-0'>
 									{this.isOwner() && (
 										<Link to={`/user/${userId}/amend`}>
 											<button
