@@ -51,8 +51,8 @@ class ShoppingCart extends React.Component {
 		if (!this.state.user) return null
 		const { user } = this.state
 		return (
-			<section className='bg-black body-div'>
-				<div className='body-presets'>
+			<section className='bg-set-4 body-div'>
+				<div className='body-presets bg-grad'>
 					{Auth.isAuthenticated() && (
 						<h1 className='title-head font'>Your Shopping Cart:</h1>
 					)}

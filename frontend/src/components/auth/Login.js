@@ -29,54 +29,58 @@ class Login extends React.Component {
 
 	render() {
 		return (
-			<section className='bg-black form-body'>
-				<div className='body-presets'>
-					<div className='center-item-screen mt-5'>
-						<h1 className='title-head font'>Login</h1>
-					</div>
-					<div className='form-wrapper'>
-						<form onSubmit={this.handleSubmit}>
-							<div className='main-form-group'>
-								<input
-									className='main-form-field'
-									placeholder='email'
-									name='email'
-									id='email'
-									onChange={this.handleChange}
-									required
-								/>
-								<label htmlFor='email' className='main-form-label'>
-									Email
-								</label>
+			<div className='bg-set-12'>
+				<div className='bg-grad'>
+					<section className='form-body'>
+						<div className='body-presets'>
+							<div className='center-item-screen mt-5'>
+								<h1 className='title-head font'>Login</h1>
 							</div>
-							<div className='main-form-group'>
-								<input
-									className='main-form-field'
-									type='password'
-									placeholder='password'
-									name='password'
-									id='password'
-									onChange={this.handleChange}
-									required
-								/>
-								<label htmlFor='password' className='main-form-label'>
-									Password
-								</label>
+							<div className='form-wrapper'>
+								<form onSubmit={this.handleSubmit}>
+									<div className='main-form-group'>
+										<input
+											className='main-form-field'
+											placeholder='email'
+											name='email'
+											id='email'
+											onChange={this.handleChange}
+											required
+										/>
+										<label htmlFor='email' className='main-form-label'>
+											Email
+										</label>
+									</div>
+									<div className='main-form-group'>
+										<input
+											className='main-form-field'
+											type='password'
+											placeholder='password'
+											name='password'
+											id='password'
+											onChange={this.handleChange}
+											required
+										/>
+										<label htmlFor='password' className='main-form-label'>
+											Password
+										</label>
+									</div>
+									<br />
+									<br />
+									<div className='center-item-screen'>
+										<button
+											className='btn btn-outline-light btn-presets'
+											type='submit'
+										>
+											Login
+										</button>
+									</div>
+								</form>
 							</div>
-							<br />
-							<br />
-							<div className='center-item-screen'>
-								<button
-									className='btn btn-outline-light btn-presets'
-									type='submit'
-								>
-									Login
-								</button>
-							</div>
-						</form>
-					</div>
+						</div>
+					</section>
 				</div>
-			</section>
+			</div>
 		)
 	}
 }

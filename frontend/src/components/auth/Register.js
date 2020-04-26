@@ -68,91 +68,95 @@ class Register extends React.Component {
 
 	render() {
 		return (
-			<section className='bg-black form-body'>
-				<div className='body-presets'>
-					<div className='center-item-screen mt-5'>
-						<h1 className='title-head font'>Register</h1>
-					</div>
-					<div className='form-wrapper'>
-						<form onSubmit={this.handleSubmit}>
-							<div className='main-form-group'>
-								<input
-									className='main-form-field'
-									onChange={this.handleChange}
-									placeholder='username'
-									name='username'
-									id='username'
-									required
-								/>
-								<label htmlFor='username' className='main-form-label'>
-									Username
-								</label>
+			<div className='bg-set-11'>
+				<div className='bg-grad'>
+					<section className='form-body'>
+						<div className='body-presets'>
+							<div className='center-item-screen mt-5'>
+								<h1 className='title-head font'>Register</h1>
 							</div>
+							<div className='form-wrapper'>
+								<form onSubmit={this.handleSubmit}>
+									<div className='main-form-group'>
+										<input
+											className='main-form-field'
+											onChange={this.handleChange}
+											placeholder='username'
+											name='username'
+											id='username'
+											required
+										/>
+										<label htmlFor='username' className='main-form-label'>
+											Username
+										</label>
+									</div>
 
-							<div className='main-form-group'>
-								<input
-									className='main-form-field'
-									onChange={this.handleChange}
-									type='email'
-									placeholder='email'
-									name='email'
-									id='email'
-									required
-								/>
-								<label htmlFor='email' className='main-form-label'>
-									Email
-								</label>
+									<div className='main-form-group'>
+										<input
+											className='main-form-field'
+											onChange={this.handleChange}
+											type='email'
+											placeholder='email'
+											name='email'
+											id='email'
+											required
+										/>
+										<label htmlFor='email' className='main-form-label'>
+											Email
+										</label>
+									</div>
+
+									<div className='main-form-group'>
+										<input
+											className='main-form-field'
+											onChange={this.handleChange}
+											type='password'
+											placeholder='password'
+											name='password'
+											id='password'
+											required
+										/>
+										<label htmlFor='password' className='main-form-label'>
+											Password
+										</label>
+									</div>
+
+									<div className='main-form-group'>
+										<input
+											className='main-form-field'
+											onChange={this.handleChange}
+											type='password'
+											placeholder='confirm password'
+											name='password_confirmation'
+											id='password_confirmation'
+											required
+										/>
+										<label
+											htmlFor='password_confirmation'
+											className='main-form-label'
+										>
+											Confirm Password
+										</label>
+									</div>
+
+									<br />
+									<br />
+
+									<div className='center-item-screen'>
+										<button
+											className='btn btn-outline-light btn-presets'
+											type='submit'
+											disabled={!this.state.formValid}
+										>
+											Register
+										</button>
+									</div>
+								</form>
 							</div>
-
-							<div className='main-form-group'>
-								<input
-									className='main-form-field'
-									onChange={this.handleChange}
-									type='password'
-									placeholder='password'
-									name='password'
-									id='password'
-									required
-								/>
-								<label htmlFor='password' className='main-form-label'>
-									Password
-								</label>
-							</div>
-
-							<div className='main-form-group'>
-								<input
-									className='main-form-field'
-									onChange={this.handleChange}
-									type='password'
-									placeholder='confirm password'
-									name='password_confirmation'
-									id='password_confirmation'
-									required
-								/>
-								<label
-									htmlFor='password_confirmation'
-									className='main-form-label'
-								>
-									Confirm Password
-								</label>
-							</div>
-
-							<br />
-							<br />
-
-							<div className='center-item-screen'>
-								<button
-									className='btn btn-outline-light btn-presets'
-									type='submit'
-									disabled={!this.state.formValid}
-								>
-									Register
-								</button>
-							</div>
-						</form>
-					</div>
+						</div>
+					</section>
 				</div>
-			</section>
+			</div>
 		)
 	}
 }

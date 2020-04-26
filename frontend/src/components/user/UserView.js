@@ -26,7 +26,7 @@ class UserView extends React.Component {
 		const userId = this.props.match.params.id
 		const user = this.state.user
 		return (
-			<section className='bg-black body-div bg-set-1'>
+			<section className='body-div bg-set-1'>
 				<div className='body-presets bg-grad'>
 					<h1 className='title-head font'>Profile</h1>
 					<div className='meta-container'>
