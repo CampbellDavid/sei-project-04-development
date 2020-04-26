@@ -39,7 +39,10 @@ class SportIndex extends React.Component {
 					<div className='m-4'>
 						{Auth.isAuthenticated() ? (
 							<Link to='/sports/create'>
-								<button type='button' className='btn btn-outline-light'>
+								<button
+									type='button'
+									className='btn btn-outline-light btn-presets'
+								>
 									Create Sport
 								</button>
 							</Link>

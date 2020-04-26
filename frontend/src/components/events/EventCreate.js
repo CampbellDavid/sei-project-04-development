@@ -10,7 +10,20 @@ class EventCreate extends React.Component {
 			price: '',
 			time_and_date: '',
 			location: '',
-			sport: ''
+			sport: '',
+			sportOps: null,
+		},
+	}
+
+	async componentDidMount() {
+		try {
+			const res = await axios.get('/api/sports/')
+			console.log(res.data[0].name)
+			this.setState({ sportOps: res.data })
+
+			this.state.sportOps.map((op) => console.log(op.name))
+		} catch (error) {
+			console.log(error)
 		}
 	}
 
@@ -19,11 +32,11 @@ class EventCreate extends React.Component {
 		this.setState({ data })
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		try {
 			const response = await axios.post('/api/events/', this.state.data, {
-				headers: { Authorization: `Bearer ${Auth.getToken()}` }
+				headers: { Authorization: `Bearer ${Auth.getToken()}` },
 			})
 			this.props.history.push(`/events/${response.data.id}`)
 		} catch (error) {
@@ -32,16 +45,19 @@ class EventCreate extends React.Component {
 	}
 
 	render() {
+		if (!this.state.sportOps) return null
+
 		return (
-			<body className='has-navbar-fixed-top'>
+			<div className='body-div'>
 				<section className='form'>
 					<EventForm
 						data={this.state.data}
+						sportOps={this.state.sportOps}
 						handleChange={this.handleChange}
 						handleSubmit={this.handleSubmit}
 					/>
 				</section>
-			</body>
+			</div>
 		)
 	}
 }

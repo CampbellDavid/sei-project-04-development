@@ -10,15 +10,25 @@ class EventAmend extends React.Component {
 			price: '',
 			time_and_date: '',
 			location: '',
-			sport: ''
-		}
+			sport: '',
+			sportOps: null,
+		},
 	}
 
 	async componentDidMount() {
 		const eventId = this.props.match.params.id
 		try {
-			const response = await axios.get(`/api/events/${eventId}/`)
-			this.setState({ data: response.data })
+			await axios
+				.all([axios.get(`/api/events/${eventId}/`), axios.get('/api/sports/')])
+				.then(
+					axios.spread((event, options) => {
+						this.setState({
+							data: event.data,
+							sportOps: options.data,
+						})
+						console.log(this.state)
+					})
+				)
 		} catch (error) {
 			console.log(error)
 		}
@@ -30,7 +40,7 @@ class EventAmend extends React.Component {
 		this.setState({ data })
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		const eventId = this.props.match.params.id
 		console.log(eventId)
@@ -39,7 +49,7 @@ class EventAmend extends React.Component {
 				`/api/events/${eventId}/`,
 				this.state.data,
 				{
-					headers: { Authorization: `Bearer ${Auth.getToken()}` }
+					headers: { Authorization: `Bearer ${Auth.getToken()}` },
 				}
 			)
 			console.log({ data })
@@ -50,11 +60,13 @@ class EventAmend extends React.Component {
 	}
 
 	render() {
-		console.log(this.state.data)
+		if (!this.state.sportOps) return null
+		console.log(this.state)
 		return (
 			<body className='has-navbar-fixed-top'>
 				<EventForm
 					data={this.state.data}
+					sportOps={this.state.sportOps}
 					handleChange={this.handleChange}
 					handleSubmit={this.handleSubmit}
 				/>

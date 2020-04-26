@@ -56,8 +56,7 @@ const SportForm = ({ sport, handleChange, handleSubmit }) => {
 									/>
 								</div>
 
-								<hr className='divider' />
-								<div className='center-item-screen'>
+								<div className='center-item-screen mt-4'>
 									<button
 										type='submit'
 										className='btn btn-outline-light btn-presets'

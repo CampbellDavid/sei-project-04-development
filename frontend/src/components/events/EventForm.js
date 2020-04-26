@@ -1,7 +1,6 @@
 import React from 'react'
 
-const EventForm = ({ data, handleChange, handleSubmit }) => {
-	console.log(data)
+const EventForm = ({ data, sportOps, handleChange, handleSubmit }) => {
 	return (
 		<div className='bg-set-7'>
 			<div className='bg-grad'>
@@ -104,14 +103,18 @@ const EventForm = ({ data, handleChange, handleSubmit }) => {
 								</div>
 
 								<div className='main-form-group'>
-									<input
+									<select
 										className='main-form-field'
 										onChange={handleChange}
 										placeholder='Sport'
 										name='sport'
 										id='sport'
-										// value={data.sport} - needs to be drop down list of existing events
-									/>
+										value={data.sport}
+									>
+										{sportOps.map((option) => {
+											return <option value={option.id}>{option.name}</option>
+										})}
+									</select>
 									<label htmlFor='sport' className='main-form-label'>
 										Sport
 									</label>
