@@ -260,6 +260,12 @@ $gray: #9b9b9b;
 	margin: 0 0 10px 10px;
 }
 
+.event-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
 // Event display
 
 .main-body-event-disp {

@@ -25,9 +25,11 @@ class EventIndex extends React.Component {
 		return (
 			<section className='main-body-event'>
 				<h1 className='event-head font pt-5'>Events</h1>
-				{events.map((event) => {
-					return <EventCard key={event.id} {...event} />
-				})}
+				<div className='event-box'>
+					{events.map((event) => {
+						return <EventCard key={event.id} {...event} />
+					})}
+				</div>
 
 				<div className='p-3'>
 					{Auth.isAuthenticated() ? (
