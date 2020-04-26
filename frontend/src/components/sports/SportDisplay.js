@@ -38,69 +38,72 @@ class SportDisplay extends React.Component {
 		if (!this.state.sport) return null
 		const sportId = this.props.match.params.id
 		return (
-			<section className='bg-black body-div'>
-				<div className='body-presets'>
-					<h1 className='title-head font'>{this.state.sport.name}</h1>
-					<img
-						src={this.state.sport.image}
-						alt={this.state.sport.name}
-						className='sport-img-disp mb-2 img-responsive'
-					/>
+			<div className='bg-set-13'>
+				<div className='bg-grad'>
+					<section className='body-div'>
+						<div className='body-presets'>
+							<h1 className='title-head font'>{this.state.sport.name}</h1>
+							<img
+								src={this.state.sport.image}
+								alt={this.state.sport.name}
+								className='sport-img-disp mb-2 img-responsive'
+							/>
 
-					<Link to={'/events/create'}>
-						<button
-							type='button'
-							className='btn btn-outline-light sport-arr-btn'
-							type='button'
-						>
-							Add Event
-						</button>
-					</Link>
+							<div className='events-section mb-4'>
+								<h3 className='sub-head font'>Events:</h3>
+								<p className='sport-card-content'>
+									{this.state.sport.events.map((event) => {
+										return (
+											<Link to={`/events/${event.id}`}>
+												<p className='event-desc-spt-disp'>{event.title}</p>
+											</Link>
+										)
+									})}
+								</p>
+							</div>
 
-					<div className='events-section mb-4'>
-						<h3 className='sub-head font'>Events:</h3>
-						<p className='sport-card-content'>
-							{this.state.sport.events.map((event) => {
-								return (
-									<Link to={`/events/${event.id}`}>
-										<p className='event-desc-spt-disp'>{event.title}</p>
-									</Link>
-								)
-							})}
-						</p>
-					</div>
+							{Auth.isAuthenticated() ? (
+								<>
+									{this.isOwner() && (
+										<div>
+											<Link to={'/events/create'}>
+												<button
+													type='button'
+													className='btn btn-outline-light sport-arr-btn'
+													type='button'
+												>
+													Add Event
+												</button>
+											</Link>
+											<Link to={`/sports/${sportId}/amend`}>
+												<button
+													type='button'
+													className='btn btn-outline-light sport-arr-btn'
+													type='button'
+												>
+													Amend Sport
+												</button>
+											</Link>
+											<button
+												className='btn btn-danger sport-arr-btn'
+												onClick={this.deleteSport}
+											>
+												Delete Sport
+											</button>
+										</div>
+									)}
+								</>
+							) : null}
 
-					{Auth.isAuthenticated() ? (
-						<>
-							{this.isOwner() && (
-								<div>
-									<Link to={`/sports/${sportId}/amend`}>
-										<button
-											type='button'
-											className='btn btn-outline-light sport-arr-btn'
-											type='button'
-										>
-											Amend Sport
-										</button>
-									</Link>
-									<button
-										className='btn btn-danger sport-arr-btn'
-										onClick={this.deleteSport}
-									>
-										Delete Sport
-									</button>
-								</div>
-							)}
-						</>
-					) : null}
-
-					<div className='right-column'>
-						<p className='sport-description text-justify'>
-							{this.state.sport.description}
-						</p>
-					</div>
+							<div className='right-column'>
+								<p className='sport-description text-justify'>
+									{this.state.sport.description}
+								</p>
+							</div>
+						</div>
+					</section>
 				</div>
-			</section>
+			</div>
 		)
 	}
 }
