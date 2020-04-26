@@ -3,9 +3,11 @@ import React from 'react'
 const SportForm = ({ sport, handleChange, handleSubmit }) => {
 	console.log(sport)
 	return (
-		<section className='main-body'>
-			<div>
-				<h1 className='main-heading'>Sport</h1>
+		<section className='bg-black form-body'>
+			<div className='body-presets'>
+				<div className='center-item-screen'>
+					<h1 className='title-head font'>Sport</h1>
+				</div>
 				<div className='form-wrapper'>
 					<form onSubmit={handleSubmit}>
 						<div className='main-form-group'>
@@ -53,8 +55,11 @@ const SportForm = ({ sport, handleChange, handleSubmit }) => {
 						</div>
 
 						<hr className='divider' />
-						<div className='button-div'>
-							<button className='button is-rounded' type='submit'>
+						<div className='center-item-screen'>
+							<button
+								type='submit'
+								className='btn btn-outline-light btn-presets'
+							>
 								Submit
 							</button>
 						</div>
