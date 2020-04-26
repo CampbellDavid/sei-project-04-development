@@ -4,11 +4,17 @@ $white: #fff;
 $gray: #9b9b9b;
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
 
 // General
 
 .font {
 	font-family: 'Teko', sans-serif;
+	color: #fff;
+}
+
+.sub-font {
+	font-family: 'Baloo Bhaina 2', cursive;
 	color: #fff;
 }
 
@@ -20,29 +26,77 @@ $gray: #9b9b9b;
 	background-color: #343a40;
 }
 
+.bg-black {
+	background-color: #000000;
+}
+
 .title-head {
-	color: $white;
 	margin-bottom: 10px;
 	font-size: 50px;
 	margin: 0 0 10px 10px;
 }
 
 .sub-head {
-	color: $white;
 	margin-bottom: 10px;
 	font-size: 40px;
 	margin: 0 0 10px 10px;
+}
+
+.sub-head-2 {
+	margin-bottom: 10px;
+	font-size: 30px;
+	margin: 0 0 10px 10px;
+}
+
+.body-presets {
+	padding: 40px;
+	min-height: 100vh;
+}
+
+.btn-presets {
+	width: 190px;
+	margin: 10px;
+}
+
+.img-disp {
+	height: 300px;
+	width: 600px;
+	border-radius: 15px;
+}
+
+.desc-preset {
+	margin: 5px;
+	font-size: 18px;
+}
+
+.center-item-screen {
+	display: flex;
+	justify-content: center;
+}
+
+.btn-circle {
+	width: 50px;
+	height: 50px;
+	padding: 10px 16px;
+	font-size: 18px;
+	line-height: 1.33;
+	border-radius: 25px;
+	color: #ffffff;
+	border: 1px solid #ffffff;
+	background-color: #000000;
+}
+
+.btn-circle:hover {
+	color: #000000;
+	border: 1px solid #ffffff;
+	background-color: #ffffff;
+	transition: 0.3s;
 }
 
 // Home
 
 .home-logo {
 	width: 300px;
-}
-
-.center-item-screen {
-	display: flex;
-	justify-content: center;
 }
 
 .bg-home {
@@ -297,12 +351,6 @@ $gray: #9b9b9b;
 	margin: 10px;
 }
 
-.ev-disp-subtitle {
-	color: $white;
-	margin: 5px;
-	font-size: 18px;
-}
-
 .ev-disp-title {
 	color: $white;
 	margin: 5px;
@@ -315,14 +363,13 @@ $gray: #9b9b9b;
 .grp-card-sec {
 	width: 75vw;
 	padding: 10px;
-	border: 2px solid $primary;
-	margin: 10px 0;
-	border-radius: 10px;
-	background-color: #414141;
+	border: 1px solid #ffffff;
+	border-radius: 4px;
+	background-color: #000000;
 }
 
 .card-div {
-	background-color: #414141;
+	background-color: #000000;
 	color: $white;
 	font-size: 20px;
 }
@@ -443,12 +490,6 @@ $gray: #9b9b9b;
 	color: $white;
 	margin: 5px;
 	font-size: 18px;
-}
-
-.sport-img-disp {
-	height: 300px;
-	width: 600px;
-	border-radius: 15px;
 }
 
 .sport-description {

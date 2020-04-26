@@ -2,10 +2,10 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 
 const SportCard = ({ id, name, image }) => (
-	<Card className='m-3' style={{ width: '18rem' }}>
-		<Card.Img variant='top' src={image} />
+	<Card className='m-3' style={{ width: '18rem', height: '16rem' }}>
+		<Card.Img style={{ height: '50%' }} variant='top' src={image} />
 		<Card.Body>
-			<Card.Title>{name}</Card.Title>
+			<Card.Title className='text-center text-uppercase'>{name}</Card.Title>
 			<div className='center-item-screen'>
 				<Button variant='dark' href={`sports/${id}`}>
 					View Sport

@@ -23,22 +23,24 @@ class EventIndex extends React.Component {
 		const events = this.state.events
 		console.log('events:', events)
 		return (
-			<section className='main-body-event'>
-				<h1 className='title-head font pt-5'>Events</h1>
-				<div className='event-box'>
-					{events.map((event) => {
-						return <EventCard key={event.id} {...event} />
-					})}
-				</div>
+			<section className='bg-black body-div'>
+				<div className='body-presets'>
+					<h1 className='title-head font'>Events</h1>
+					<div className='event-box'>
+						{events.map((event) => {
+							return <EventCard key={event.id} {...event} />
+						})}
+					</div>
 
-				<div className='p-3'>
-					{Auth.isAuthenticated() ? (
-						<Link to='/events/create'>
-							<button type='button' className='btn btn-outline-light'>
-								Create New Event
-							</button>
-						</Link>
-					) : null}
+					<div className='p-3'>
+						{Auth.isAuthenticated() ? (
+							<Link to='/events/create'>
+								<button type='button' className='btn btn-outline-light'>
+									Create New Event
+								</button>
+							</Link>
+						) : null}
+					</div>
 				</div>
 			</section>
 		)

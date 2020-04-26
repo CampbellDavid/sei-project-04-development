@@ -3,6 +3,13 @@ import Auth from '../../lib/auth'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 // import GroupAmend from './GroupAmend'
+import {
+	faTrash,
+	faEdit,
+	faPlus,
+	faMinus,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class GroupCard extends React.Component {
 	state = {
@@ -11,9 +18,9 @@ class GroupCard extends React.Component {
 			attendees: [],
 			event: {},
 			owner: {},
-			id: ''
+			id: '',
 		},
-		errors: {}
+		errors: {},
 	}
 
 	isOwner = () => Auth.getPayload().sub === this.state.group.owner.id
@@ -31,17 +38,17 @@ class GroupCard extends React.Component {
 		}
 	}
 
-	handleClick = async e => {
+	handleClick = async (e) => {
 		e.preventDefault()
 		const userId = Auth.getPayload().sub
 		const attendeesArray = this.state.group.attendees
 		try {
 			const user = await axios.get(`/api/user/${userId}`)
 			const currentUser = attendeesArray.filter(
-				attendee => attendee.id === userId
+				(attendee) => attendee.id === userId
 			)[0]
 			const index = attendeesArray.indexOf(currentUser)
-			attendeesArray.some(attendee => attendee.id === user.data.id)
+			attendeesArray.some((attendee) => attendee.id === user.data.id)
 				? attendeesArray.splice(index, 1)
 				: attendeesArray.push(user.data)
 			this.setState({ attendees: attendeesArray })
@@ -51,14 +58,14 @@ class GroupCard extends React.Component {
 		}
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		const { group } = this.state
 		const sendData = {
 			group_name: group.group_name,
-			attendees: group.attendees.map(attendee => attendee.id),
+			attendees: group.attendees.map((attendee) => attendee.id),
 			event: group.event,
 			owner: group.owner,
-			id: group.id
+			id: group.id,
 		}
 		const groupId = this.props.id
 		const eventId = this.props.event.id
@@ -67,7 +74,7 @@ class GroupCard extends React.Component {
 				`/api/events/${eventId}/event_groups/${groupId}/`,
 				sendData,
 				{
-					headers: { Authorization: `Bearer ${Auth.getToken()}` }
+					headers: { Authorization: `Bearer ${Auth.getToken()}` },
 				}
 			)
 		} catch (err) {
@@ -81,7 +88,7 @@ class GroupCard extends React.Component {
 		console.log(this.props)
 		try {
 			await axios.delete(`/api/events/${eventId}/event_groups/${groupId}/`, {
-				headers: { Authorization: `Bearer ${Auth.getToken()}` }
+				headers: { Authorization: `Bearer ${Auth.getToken()}` },
 			})
 			window.location.reload(false)
 		} catch (err) {
@@ -97,11 +104,11 @@ class GroupCard extends React.Component {
 			<section>
 				<div className='card-div'>
 					<div className='grp-card-info'>
-						<h2 className='grp-name-head'>{group.group_name}</h2>
+						<h2 className='font sub-head'>Group Name: '{group.group_name}'</h2>
 					</div>
-					{lead && <h3>Leader: {lead.username}</h3>}
+					{lead && <h3 className='font sub-head-2'>Leader: {lead.username}</h3>}
 					{group.attendees !== null ? (
-						<h3>
+						<h3 className='font sub-head-2'>
 							Attendees:
 							{group.attendees.map((attendee, i) => {
 								return (
@@ -130,11 +137,11 @@ class GroupCard extends React.Component {
 					{group.attendees !== null ? (
 						Auth.isAuthenticated() ? (
 							<div className='buttons'>
-								{group.attendees.some(attendee => attendee.id === userId) ? (
+								{group.attendees.some((attendee) => attendee.id === userId) ? (
 									<div>
 										<button
 											type='button'
-											className='button is-rounded arr-btn'
+											className='btn btn-outline-light btn-presets'
 											onClick={this.handleClick}
 										>
 											Leave
@@ -144,7 +151,7 @@ class GroupCard extends React.Component {
 									<div>
 										<button
 											type='button'
-											className='button is-rounded arr-btn'
+											className='btn btn-outline-light btn-presets'
 											onClick={this.handleClick}
 										>
 											Join
@@ -158,17 +165,17 @@ class GroupCard extends React.Component {
 										>
 											<button
 												type='button'
-												className='button is-rounded arr-btn'
+												className='btn btn-outline-light btn-presets'
 											>
-												Rename Group
+												Edit
 											</button>
 										</Link>
 										<button
 											onClick={this.deleteGroup}
 											type='button'
-											className='button is-rounded arr-btn is-danger'
+											className='btn btn-danger btn-presets'
 										>
-											Delete Group
+											Delete
 										</button>
 									</div>
 								)}
