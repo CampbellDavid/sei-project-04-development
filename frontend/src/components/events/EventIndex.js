@@ -23,8 +23,8 @@ class EventIndex extends React.Component {
 		const events = this.state.events
 		console.log('events:', events)
 		return (
-			<section className='bg-black body-div'>
-				<div className='body-presets'>
+			<section className='body-div bg-set-2'>
+				<div className='body-presets bg-grad'>
 					<h1 className='title-head font'>Events</h1>
 					<div className='event-box'>
 						{events.map((event) => {

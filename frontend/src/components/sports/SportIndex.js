@@ -23,8 +23,8 @@ class SportIndex extends React.Component {
 		const sports = this.state.sports
 		console.log('sports:', sports)
 		return (
-			<section className='bg-black body-div'>
-				<div className='body-presets'>
+			<section className='bg-set-3 body-div'>
+				<div className='body-presets bg-grad'>
 					<h1 className='title-head font'>Sports</h1>
 					<div className='meta-container-spt-disp'>
 						{sports.map((sport) => {
