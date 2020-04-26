@@ -56,13 +56,17 @@ class ShoppingCart extends React.Component {
 					{Auth.isAuthenticated() && (
 						<h1 className='title-head font'>Your Shopping Cart:</h1>
 					)}
-					<div className='d-flex'>
+					<div className='row'>
 						{Auth.isAuthenticated() &&
 						this.state.user.shopping_cart.length !== 0 ? (
 							this.state.user.shopping_cart.map((item) => {
 								return (
 									<Card className='m-3' style={{ width: '18rem' }}>
-										<Card.Img variant='top' src={item.image} />
+										<Card.Img
+											variant='top'
+											style={{ height: '50%' }}
+											src={item.image}
+										/>
 										<Card.Body className='d-flex flex-column'>
 											<Card.Title>{item.title}</Card.Title>
 

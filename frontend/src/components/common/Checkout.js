@@ -2,10 +2,11 @@ import axios from 'axios'
 import React from 'react'
 import Auth from '../../lib/auth'
 import { Link } from 'react-router-dom'
+import { Card, Button } from 'react-bootstrap'
 
 class Checkout extends React.Component {
 	state = {
-		user: null
+		user: null,
 	}
 
 	async componentDidMount() {
@@ -21,7 +22,7 @@ class Checkout extends React.Component {
 	getTotalPrice = () => {
 		const cartArr = this.state.user.shopping_cart
 		const priceArr = []
-		cartArr.map(item => priceArr.push(item.price))
+		cartArr.map((item) => priceArr.push(item.price))
 		console.log(priceArr)
 		const finalPrice = priceArr.reduce((a, b) => a + b)
 		console.log(finalPrice)
@@ -31,7 +32,7 @@ class Checkout extends React.Component {
 	currency = new Intl.NumberFormat('en-GB', {
 		style: 'currency',
 		currency: 'GBP',
-		minimumFractionDigits: 2
+		minimumFractionDigits: 2,
 	})
 
 	render() {
@@ -41,33 +42,55 @@ class Checkout extends React.Component {
 		const userId = Auth.getPayload().sub
 		console.log(userId)
 		return (
-			<body className='has-navbar-fixed-top'>
-				<section className='cart-body'>
-					<h1 className='cart-head'>Checkout</h1>
+			<section className='bg-black body-div'>
+				<div className='body-presets'>
+					<h1 className='title-head font'>Checkout</h1>
+					<div className='row'>
+						{user.shopping_cart.map((item) => {
+							return (
+								<Card className='m-3' style={{ width: '18rem' }}>
+									<Card.Img
+										style={{ height: '50%' }}
+										variant='top'
+										src={item.image}
+									/>
+									<Card.Body className='d-flex flex-column'>
+										<Card.Title>{item.title}</Card.Title>
 
-					{user.shopping_cart.map(item => {
-						return (
-							<Link to={`/events/${item.id}`}>
-								<div className='item-card-checkout'>
-									<p className='cart-item' key={item.title}>
-										{item.title}
-									</p>
-									<p className='cart-item-price' key={item.price}>
-										{this.currency.format(item.price)}
-									</p>
-								</div>
-							</Link>
-						)
-					})}
-					<p className='cart-item-price'>Total: {this.getTotalPrice()}</p>
+										<div className='mt-auto'>
+											<Card.Subtitle className='pt-2 pb-2'>
+												{this.currency.format(item.price)}
+											</Card.Subtitle>
+
+											<div className='center-item-screen'>
+												<Button
+													variant='dark'
+													href={`/events/${item.id}`}
+													className='mr-1'
+												>
+													View Event
+												</Button>
+											</div>
+										</div>
+									</Card.Body>
+								</Card>
+							)
+						})}
+					</div>
+					<p className='font sub-head'>Total: {this.getTotalPrice()}</p>
 					<hr className='divider-small' />
 					<Link to='/secure_payment'>
-						<button type='button' className='button is-rounded'>
+						<button type='button' className='btn btn-outline-light btn-presets'>
 							Proceed to payment
 						</button>
 					</Link>
-				</section>
-			</body>
+					<Link to={`/user/${userId}/cart`}>
+						<button type='button' className='btn btn-outline-light btn-presets'>
+							Back
+						</button>
+					</Link>
+				</div>
+			</section>
 		)
 	}
 }
