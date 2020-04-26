@@ -87,6 +87,21 @@ const EventForm = ({ data, handleChange, handleSubmit }) => {
 						<input
 							className='main-form-field'
 							onChange={handleChange}
+							placeholder='Image'
+							name='image'
+							id='image'
+							value={data.image}
+							required
+						/>
+						<label htmlFor='image' className='main-form-label'>
+							Image
+						</label>
+					</div>
+
+					<div className='main-form-group'>
+						<input
+							className='main-form-field'
+							onChange={handleChange}
 							placeholder='Sport'
 							name='sport'
 							id='sport'

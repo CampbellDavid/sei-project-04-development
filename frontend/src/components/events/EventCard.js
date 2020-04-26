@@ -1,31 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Moment from 'moment'
+import { Card, Button } from 'react-bootstrap'
 
 const currency = new Intl.NumberFormat('en-GB', {
 	style: 'currency',
 	currency: 'GBP',
-	minimumFractionDigits: 2
+	minimumFractionDigits: 2,
 })
 
 const EventCard = ({
 	id,
-	sport,
 	title,
 	location,
+	image,
 	price,
 	time_and_date,
-	description
+	description,
 }) => (
-	<Link to={`/events/${id}`}>
-		<div className='event-card'>
-			<h2 className='ev-card-title'>{title}</h2>
-			<p className='ev-card-content'>{sport}</p>
-			<p className='ev-card-content'>{location}</p>
-			<p className='ev-card-content'>{currency.format(price)}</p>
-			<p className='ev-card-content'>{Moment(time_and_date).format('lll')}</p>
-			<p className='ev-card-content'>{description}</p>
-		</div>
-	</Link>
+	<Card style={{ width: '18rem' }}>
+		<Card.Img variant='top' src={image} />
+		<Card.Body>
+			<Card.Title>{title}</Card.Title>
+			<Card.Text>{description}</Card.Text>
+			<Card.Subtitle className='pt-2 pb-2'>{location}</Card.Subtitle>
+			<Card.Subtitle className='pt-2 pb-2'>
+				{currency.format(price)}
+			</Card.Subtitle>
+			<Card.Subtitle className='pt-2 pb-2'>
+				{Moment(time_and_date).format('lll')}
+			</Card.Subtitle>
+			<Button variant='dark' href={`events/${id}`}>
+				View Event
+			</Button>
+		</Card.Body>
+	</Card>
 )
+
 export default EventCard

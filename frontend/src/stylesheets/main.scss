@@ -250,39 +250,14 @@ $gray: #9b9b9b;
 	padding: 40px;
 	min-height: 100vh;
 	font-size: 1.5rem;
-	background-color: #222222;
+	background-color: #000;
 }
 
 .event-head {
 	color: $white;
 	margin-bottom: 10px;
-	font-size: 30px;
+	font-size: 50px;
 	margin: 0 0 10px 10px;
-}
-
-.event-card {
-	width: 75vw;
-	padding: 10px;
-	border: 2px solid $primary;
-	margin: 10px 0;
-	border-radius: 10px;
-	background-color: #414141;
-}
-
-.event-card:hover {
-	background-color: #7a7a7a;
-}
-
-.ev-card-title {
-	color: $white;
-	margin: 5px;
-	font-size: 18px;
-}
-
-.ev-card-content {
-	color: $white;
-	margin: 5px;
-	font-size: 14px;
 }
 
 // Event display

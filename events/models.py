@@ -11,6 +11,7 @@ class Event(models.Model):
     title = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
     price = models.PositiveIntegerField()
+    image = models.CharField(max_length=500)
     sport = models.ForeignKey(
         Sport, related_name='events', null=True, blank=True, on_delete=models.CASCADE)
     time_and_date = models.DateTimeField(auto_now=False, auto_now_add=False)
