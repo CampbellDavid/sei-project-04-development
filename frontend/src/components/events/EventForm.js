@@ -109,8 +109,11 @@ const EventForm = ({ data, sportOps, handleChange, handleSubmit }) => {
 										placeholder='Sport'
 										name='sport'
 										id='sport'
-										value={data.sport}
+										defaultValue='choose-sport'
 									>
+										<option value='choose-sport' disabled>
+											Please select a sport
+										</option>
 										{sportOps.map((option) => {
 											return <option value={option.id}>{option.name}</option>
 										})}
