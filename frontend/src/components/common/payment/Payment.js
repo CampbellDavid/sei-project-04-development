@@ -1,5 +1,4 @@
 import React from 'react'
-// import { render } from 'react-dom'
 import Card from 'react-credit-cards'
 import Auth from '../../../lib/auth'
 import axios from 'axios'
@@ -7,10 +6,9 @@ import {
 	formatCreditCardNumber,
 	formatCVC,
 	formatExpirationDate,
-	formatFormData
+	formatFormData,
 } from './utils'
 import 'react-credit-cards/es/styles-compiled.css'
-// import styles from '../../../stylesheets/styles.css'
 
 class Payment extends React.Component {
 	state = {
@@ -21,7 +19,7 @@ class Payment extends React.Component {
 		cvc: '',
 		issuer: '',
 		focused: '',
-		formData: null
+		formData: null,
 	}
 
 	async componentDidMount() {
@@ -42,7 +40,7 @@ class Payment extends React.Component {
 
 	handleInputFocus = ({ target }) => {
 		this.setState({
-			focused: target.name
+			focused: target.name,
 		})
 	}
 
@@ -58,24 +56,18 @@ class Payment extends React.Component {
 		this.setState({ [target.name]: target.value })
 	}
 
-	handleSubmit = e => {
+	handleSubmit = (e) => {
 		e.preventDefault()
-
-		const formData = [...e.target.elements]
-			.filter(d => d.name)
-			.reduce((acc, d) => {
-				acc[d.name] = d.value
-				return acc
-			}, {})
-
-		this.setState({ formData })
+		alert(
+			"This is a pseudo payment system for display purposes only. Your card details will not be saved and no payment will be processed. Please click 'OK' to reset the form."
+		)
 		this.form.reset()
 	}
 
 	getTotalPrice = () => {
 		const cartArr = this.state.user.shopping_cart
 		const priceArr = []
-		cartArr.map(item => priceArr.push(item.price))
+		cartArr.map((item) => priceArr.push(item.price))
 		console.log(priceArr)
 		const finalPrice = priceArr.reduce((a, b) => a + b)
 		console.log(finalPrice)
@@ -85,7 +77,7 @@ class Payment extends React.Component {
 	currency = new Intl.NumberFormat('en-GB', {
 		style: 'currency',
 		currency: 'GBP',
-		minimumFractionDigits: 2
+		minimumFractionDigits: 2,
 	})
 
 	render() {
@@ -93,10 +85,11 @@ class Payment extends React.Component {
 		const { name, number, expiry, cvc, focused, issuer, formData } = this.state
 		console.log(this.state.user)
 		return (
-			<body className='has-navbar-fixed-top'>
-				<section className='main-body'>
-					<hr className='divider' />
-					<h1 className='main-heading'>Secure Payment</h1>
+			<section className='bg-black body-div'>
+				<div className='body-presets'>
+					<div className='center-item-screen'>
+						<h1 className='title-head font m-0'>Secure Payment</h1>
+					</div>
 					<hr className='divider' />
 					<div key='Payment'>
 						<div className='App-payment'>
@@ -108,8 +101,8 @@ class Payment extends React.Component {
 								focused={focused}
 								callback={this.handleCallback}
 							/>
-							<div className='form-wrapper'>
-								<form ref={c => (this.form = c)} onSubmit={this.handleSubmit}>
+							<div className='form-wrapper center-item-screen'>
+								<form ref={(c) => (this.form = c)} onSubmit={this.handleSubmit}>
 									<div className='main-form-group'>
 										<input
 											type='tel'
@@ -125,7 +118,6 @@ class Payment extends React.Component {
 										<label htmlFor='number' className='main-form-label'>
 											Card Number
 										</label>
-										{/* <small>E.g.: 49..., 51..., 36..., 37...</small> */}
 									</div>
 									<div className='main-form-group'>
 										<input
@@ -178,27 +170,22 @@ class Payment extends React.Component {
 									</div>
 									<input type='hidden' name='issuer' value={issuer} />
 									<hr className='divider' />
-									<p className='final-price'>Total: {this.getTotalPrice()}</p>
+									<p className='font sub-head-2'>
+										Total: {this.getTotalPrice()}
+									</p>
 									<hr className='divider' />
-									<div className='form-actions'>
-										<button className='btn btn-primary btn-block button is-rounded'>
-											PAY
+									<div className='form-actions center-item-screen'>
+										<button className='btn btn-success btn-presets'>
+											Proceed
 										</button>
 									</div>
 								</form>
 								<hr className='divider' />
 							</div>
-							{formData && (
-								<div className='App-highlight'>
-									{formatFormData(formData).map((d, i) => (
-										<div key={i}>{d}</div>
-									))}
-								</div>
-							)}
 						</div>
 					</div>
-				</section>
-			</body>
+				</div>
+			</section>
 		)
 	}
 }
