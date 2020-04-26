@@ -213,14 +213,16 @@ class EventDisplay extends React.Component {
 											</div>
 										))}
 									</div>
-									<Link to={`/events/${eventId}/event_groups/create`}>
-										<button
-											className='btn btn-outline-light btn-presets'
-											type='button'
-										>
-											Create New Group
-										</button>
-									</Link>
+									<div className='center-item-screen'>
+										<Link to={`/events/${eventId}/event_groups/create`}>
+											<button
+												className='btn btn-outline-light btn-presets'
+												type='button'
+											>
+												Create New Group
+											</button>
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>

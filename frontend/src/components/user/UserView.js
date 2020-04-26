@@ -28,7 +28,7 @@ class UserView extends React.Component {
 		return (
 			<section className='body-div bg-set-1'>
 				<div className='body-presets bg-grad'>
-					<h1 className='title-head font'>Profile</h1>
+					<h1 className='title-head font text-center m-0'>Profile</h1>
 
 					<div className='grid'>
 						<div className='row'>

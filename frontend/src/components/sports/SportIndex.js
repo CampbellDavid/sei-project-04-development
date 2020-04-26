@@ -25,7 +25,7 @@ class SportIndex extends React.Component {
 		return (
 			<section className='bg-set-3 body-div'>
 				<div className='body-presets bg-grad'>
-					<h1 className='title-head font'>Sports</h1>
+					<h1 className='title-head font text-center m-0'>Sports</h1>
 					<div className='row center-item-screen'>
 						{sports.map((sport) => {
 							return <SportCard key={sport.id} {...sport} />

@@ -46,7 +46,7 @@ class Checkout extends React.Component {
 				<div className='bg-grad'>
 					<section className='body-div'>
 						<div className='body-presets'>
-							<h1 className='title-head font'>Checkout</h1>
+							<h1 className='title-head font text-center m-0'>Checkout</h1>
 							<div className='row center-item-screen'>
 								{user.shopping_cart.map((item) => {
 									return (

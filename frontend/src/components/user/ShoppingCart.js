@@ -54,7 +54,9 @@ class ShoppingCart extends React.Component {
 			<section className='bg-set-4 body-div'>
 				<div className='body-presets bg-grad'>
 					{Auth.isAuthenticated() && (
-						<h1 className='title-head font'>Your Shopping Cart:</h1>
+						<h1 className='title-head font text-center m-0'>
+							Your Shopping Cart
+						</h1>
 					)}
 					<div className='row center-item-screen'>
 						{Auth.isAuthenticated() &&

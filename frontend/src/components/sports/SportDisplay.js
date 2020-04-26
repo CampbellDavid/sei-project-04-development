@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Auth from '../../lib/auth'
+import { Card, Button } from 'react-bootstrap'
 
 class SportDisplay extends React.Component {
 	state = {
@@ -42,29 +43,33 @@ class SportDisplay extends React.Component {
 				<div className='bg-grad'>
 					<section className='body-div'>
 						<div className='body-presets'>
-							<h1 className='title-head font'>{this.state.sport.name}</h1>
-							<img
-								src={this.state.sport.image}
-								alt={this.state.sport.name}
-								className='img-disp mr-4 mb-3 img-responsive'
-							/>
-
+							<h1 className='title-head font text-center m-0'>
+								{this.state.sport.name}
+							</h1>
+							<div className='center-item-screen'>
+								<img
+									src={this.state.sport.image}
+									alt={this.state.sport.name}
+									className='img-disp m-0 img-responsive'
+								/>
+							</div>
 							<div className='events-section mb-4'>
-								<h3 className='sub-head font'>Events:</h3>
-
-								{this.state.sport.events.map((event) => {
-									return (
-										<p>
-											<Link to={`/events/${event.id}`}>{event.title}</Link>
-										</p>
-									)
-								})}
+								<h3 className='sub-head font text-center m-0 pt-4'>Events</h3>
+								<div className='center-item-screen'>
+									{this.state.sport.events.map((event) => {
+										return (
+											<p className='content-preset sub-font' key={event.title}>
+												<Link to={`/events/${event.id}`}>{event.title}</Link>
+											</p>
+										)
+									})}
+								</div>
 							</div>
 
 							{Auth.isAuthenticated() ? (
 								<>
 									{this.isOwner() && (
-										<div>
+										<div className=' row center-item-screen'>
 											<Link to={'/events/create'}>
 												<button
 													type='button'
@@ -95,7 +100,7 @@ class SportDisplay extends React.Component {
 							) : null}
 
 							<div className='right-column'>
-								<p className='content-preset text-justify'>
+								<p className='content-preset text-justify mt-2'>
 									{this.state.sport.description}
 								</p>
 							</div>
