@@ -46,7 +46,7 @@ class SportDisplay extends React.Component {
 							<img
 								src={this.state.sport.image}
 								alt={this.state.sport.name}
-								className='sport-img-disp mb-2 img-responsive'
+								className='img-disp mr-4 mb-3 img-responsive'
 							/>
 
 							<div className='events-section mb-4'>
