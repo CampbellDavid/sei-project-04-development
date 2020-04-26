@@ -98,11 +98,18 @@ class GroupCard extends React.Component {
 		return (
 			<section>
 				<div className='card-div'>
-					<div className='grp-card-info'>
-						<h2 className='font sub-head'>Group Name: '{group.group_name}'</h2>
+					<div className='row'>
+						<div className='col-8'>
+							<h2 className='font sub-head'>
+								Group Name: '{group.group_name}'
+							</h2>
+						</div>
+						<div className='col-4'>
+							{lead && (
+								<h2 className='font sub-head'>Leader: {lead.first_name}</h2>
+							)}
+						</div>
 					</div>
-					{lead && <h3 className='font sub-head-2'>Leader: {lead.username}</h3>}
-
 					{group.attendees !== null ? (
 						<div className='row'>
 							{group.attendees.map((attendee, i) => {
@@ -134,54 +141,58 @@ class GroupCard extends React.Component {
 						</div>
 					) : null}
 
-					{group.attendees !== null ? (
-						Auth.isAuthenticated() ? (
-							<div className='buttons'>
-								{group.attendees.some((attendee) => attendee.id === userId) ? (
-									<div>
-										<button
-											type='button'
-											className='btn btn-outline-light btn-presets'
-											onClick={this.handleClick}
-										>
-											Leave
-										</button>
-									</div>
-								) : (
-									<div>
-										<button
-											type='button'
-											className='btn btn-outline-light btn-presets'
-											onClick={this.handleClick}
-										>
-											Join
-										</button>
-									</div>
-								)}
-								{this.isOwner() && (
-									<div>
-										<Link
-											to={`/events/${group.event.id}/event_groups/${group.id}/amend`}
-										>
+					<div className='center-item-screen'>
+						{group.attendees !== null ? (
+							Auth.isAuthenticated() ? (
+								<div className='buttons'>
+									{group.attendees.some(
+										(attendee) => attendee.id === userId
+									) ? (
+										<div>
 											<button
 												type='button'
 												className='btn btn-outline-light btn-presets'
+												onClick={this.handleClick}
 											>
-												Edit
+												Leave
 											</button>
-										</Link>
-										<button
-											onClick={this.deleteGroup}
-											type='button'
-											className='btn btn-danger btn-presets'
-										>
-											Delete
-										</button>
-									</div>
-								)}
-							</div>
-						) : null
-					) : null}
+										</div>
+									) : (
+										<div>
+											<button
+												type='button'
+												className='btn btn-outline-light btn-presets'
+												onClick={this.handleClick}
+											>
+												Join
+											</button>
+										</div>
+									)}
+									{this.isOwner() && (
+										<div>
+											<Link
+												to={`/events/${group.event.id}/event_groups/${group.id}/amend`}
+											>
+												<button
+													type='button'
+													className='btn btn-outline-light btn-presets'
+												>
+													Edit
+												</button>
+											</Link>
+											<button
+												onClick={this.deleteGroup}
+												type='button'
+												className='btn btn-danger btn-presets'
+											>
+												Delete
+											</button>
+										</div>
+									)}
+								</div>
+							) : null
+						) : null}
+					</div>
 				</div>
 			</section>
 		)

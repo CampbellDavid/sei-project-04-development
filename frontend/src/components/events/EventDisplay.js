@@ -206,12 +206,13 @@ class EventDisplay extends React.Component {
 							<div className='row'>
 								<div className='col-lg-12'>
 									<h3 className='sub-head font'>Groups</h3>
-
-									{filteredGroups.map((group) => (
-										<div className='grp-card-sec'>
-											<GroupCard key={group.id} {...group} />
-										</div>
-									))}
+									<div className='center-item-screen'>
+										{filteredGroups.map((group) => (
+											<div className='grp-card-sec'>
+												<GroupCard key={group.id} {...group} />
+											</div>
+										))}
+									</div>
 									<Link to={`/events/${eventId}/event_groups/create`}>
 										<button
 											className='btn btn-outline-light btn-presets'

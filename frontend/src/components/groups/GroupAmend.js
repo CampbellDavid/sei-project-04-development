@@ -8,8 +8,8 @@ class GroupAmend extends React.Component {
 	state = {
 		event_group: {},
 		data: {
-			group_name: ''
-		}
+			group_name: '',
+		},
 	}
 
 	async componentDidMount() {
@@ -31,11 +31,11 @@ class GroupAmend extends React.Component {
 
 	handleChange = ({ target: { value } }) => {
 		this.setState({
-			data: { ...this.state.data, group_name: value }
+			data: { ...this.state.data, group_name: value },
 		})
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		const eventId = this.state.event_group.event.id
 		const groupId = this.state.event_group.id
@@ -55,13 +55,13 @@ class GroupAmend extends React.Component {
 	render() {
 		console.log(this.state)
 		return (
-			<body className='has-navbar-fixed-top'>
+			<div className='body-div'>
 				<GroupForm
 					data={this.state.data}
 					handleChange={this.handleChange}
 					handleSubmit={this.handleSubmit}
 				/>
-			</body>
+			</div>
 		)
 	}
 }
