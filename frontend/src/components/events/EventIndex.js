@@ -26,7 +26,7 @@ class EventIndex extends React.Component {
 			<section className='body-div bg-set-2'>
 				<div className='body-presets bg-grad'>
 					<h1 className='title-head font'>Events</h1>
-					<div className='event-box'>
+					<div className='row'>
 						{events.map((event) => {
 							return <EventCard key={event.id} {...event} />
 						})}
@@ -35,7 +35,10 @@ class EventIndex extends React.Component {
 					<div className='p-3'>
 						{Auth.isAuthenticated() ? (
 							<Link to='/events/create'>
-								<button type='button' className='btn btn-outline-light'>
+								<button
+									type='button'
+									className='btn btn-outline-light btn-presets'
+								>
 									Create New Event
 								</button>
 							</Link>

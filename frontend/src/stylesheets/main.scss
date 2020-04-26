@@ -2,9 +2,7 @@ $primary: #11998e;
 $secondary: #38ef7d;
 $white: #fff;
 $gray: #9b9b9b;
-@import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 
 // General
@@ -209,25 +207,6 @@ $gray: #9b9b9b;
 	justify-content: center;
 }
 
-.btn-circle {
-	width: 50px;
-	height: 50px;
-	padding: 10px 16px;
-	font-size: 18px;
-	line-height: 1.33;
-	border-radius: 25px;
-	color: #ffffff;
-	border: 1px solid #ffffff;
-	background-color: #000000;
-}
-
-.btn-circle:hover {
-	color: #000000;
-	border: 1px solid #ffffff;
-	background-color: #ffffff;
-	transition: 0.3s;
-}
-
 // Home
 
 .home-logo {
@@ -256,19 +235,6 @@ $gray: #9b9b9b;
 	align-items: center;
 	min-height: 100vh;
 	font-size: 1.5rem;
-}
-
-.main-heading {
-	color: $white;
-	font-size: 50px;
-}
-
-.final-price {
-	color: $white;
-}
-
-.divider {
-	background-color: #000;
 }
 
 .main-form-group {
@@ -343,41 +309,11 @@ $gray: #9b9b9b;
 	width: 220px;
 }
 
-.pro-body {
-	font-family: Arial, Helvetica, sans-serif;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	font-size: 1.5rem;
-	background-color: #000;
-}
-
-.user-info {
-	color: $white;
-}
-
-.user-self-bio {
-	color: $white;
-	font-size: 18px;
-}
-
 .meta-container {
 	width: 100vw;
 	display: flex;
 	justify-content: flex-start;
 	padding: 10px;
-}
-
-.pro-bg-img {
-	height: 35vh;
-	width: 100vw;
-}
-
-.divider-small {
-	margin: 5px;
-	background-color: #000;
 }
 
 // User form
@@ -399,95 +335,6 @@ $gray: #9b9b9b;
 	border: 2px solid #077067;
 }
 
-// Shopping Cart & Checkout
-
-.cart-body {
-	font-family: Arial, Helvetica, sans-serif;
-	display: flex;
-	flex-direction: column;
-	padding: 40px;
-	min-height: 100vh;
-	font-size: 1.5rem;
-	background-color: #222222;
-}
-
-.item-card-checkout {
-	width: 25vw;
-	padding: 10px;
-	border: 2px solid $primary;
-	margin: 10px 0;
-	border-radius: 15px;
-	background-color: #414141;
-}
-
-.item-card-checkout:hover {
-	background-color: #7a7a7a;
-}
-
-.cart-head {
-	color: $white;
-	margin-bottom: 10px;
-}
-
-.cart-item,
-.cart-item-price {
-	color: $white;
-	font-size: 18px;
-}
-
-.cart-btn {
-	width: 120px;
-}
-
-// Events
-
-.main-body-event {
-	font-family: Arial, Helvetica, sans-serif;
-	display: flex;
-	flex-direction: column;
-	padding: 40px;
-	min-height: 100vh;
-	font-size: 1.5rem;
-	background-color: #000;
-}
-
-.event-box {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-
-// Event display
-
-.main-body-event-disp {
-	font-family: Arial, Helvetica, sans-serif;
-	display: flex;
-	flex-direction: column;
-	padding: 40px;
-	min-height: 100vh;
-	font-size: 1.5rem;
-	background-color: #000;
-}
-
-.event-disp-head {
-	color: $white;
-	margin-bottom: 10px;
-	font-size: 30px;
-	margin: 0 0 10px 10px;
-}
-
-.arr-btn {
-	width: 175px;
-	margin: 10px;
-}
-
-.ev-disp-title {
-	color: $white;
-	margin: 5px;
-	font-size: 22px;
-	font-weight: 800;
-}
-
 // Group display card
 
 .grp-card-sec {
@@ -502,127 +349,4 @@ $gray: #9b9b9b;
 	background-color: transparent;
 	color: #ffffff;
 	font-size: 20px;
-}
-
-.user-img-card {
-	height: 100px;
-	width: 100px;
-	border-radius: 50%;
-	border: 2px solid white;
-	margin: 0 25px;
-}
-
-.meta-user-card {
-	height: 150px;
-	width: 200px;
-	display: flex;
-	justify-content: center;
-	border: 2px solid transparent;
-	border-radius: 10px;
-}
-
-.meta-user-card:hover {
-	border: 2px solid $primary;
-	border-radius: 10px;
-	background-color: #7a7a7a;
-}
-
-.user-name-grp {
-	color: white;
-}
-
-.grp-name-head {
-	color: white;
-	font-size: 28px;
-	font-weight: 800;
-}
-
-// Sport card
-
-.sport-card {
-	width: 200px;
-	height: 230px;
-	padding: 10px;
-	border: 2px solid $primary;
-	margin: 10px 0;
-	border-radius: 10px;
-	background-color: #414141;
-	display: flex;
-	align-content: center;
-	justify-content: center;
-}
-
-.sport-card:hover {
-	background-color: #7a7a7a;
-}
-
-.spt-cd-wrapper {
-	width: 200px;
-	margin: 0 10px;
-}
-
-.sport-card-title {
-	color: $white;
-	margin: 5px;
-	font-size: 18px;
-	width: max-content;
-}
-
-.sport-card-img {
-	height: 150px;
-	width: 150px;
-	border: 2px solid white;
-	border-radius: 50%;
-}
-
-// Sport display
-
-.meta-container-spt-disp {
-	width: 75vw;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-
-.main-body-sport {
-	font-family: Arial, Helvetica, sans-serif;
-	display: flex;
-	flex-direction: column;
-	padding: 40px;
-	min-height: 100vh;
-	font-size: 1.5rem;
-	background-color: #000;
-}
-
-.sport-card-content {
-	color: $white;
-	margin: 5px;
-	font-size: 14px;
-	width: max-content;
-}
-
-.main-body-sport-disp {
-	font-family: Arial, Helvetica, sans-serif;
-	display: flex;
-	flex-direction: column;
-	padding: 40px;
-	min-height: 100vh;
-	font-size: 1.5rem;
-	background-color: #000;
-}
-
-.sport-arr-btn {
-	width: 175px;
-	margin: 10px;
-}
-
-.sport-disp-subtitle {
-	color: $white;
-	margin: 5px;
-	font-size: 18px;
-}
-
-.sport-description {
-	color: white;
-	font-size: 16px;
 }

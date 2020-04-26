@@ -51,15 +51,14 @@ class SportDisplay extends React.Component {
 
 							<div className='events-section mb-4'>
 								<h3 className='sub-head font'>Events:</h3>
-								<p className='sport-card-content'>
-									{this.state.sport.events.map((event) => {
-										return (
-											<Link to={`/events/${event.id}`}>
-												<p className='event-desc-spt-disp'>{event.title}</p>
-											</Link>
-										)
-									})}
-								</p>
+
+								{this.state.sport.events.map((event) => {
+									return (
+										<p>
+											<Link to={`/events/${event.id}`}>{event.title}</Link>
+										</p>
+									)
+								})}
 							</div>
 
 							{Auth.isAuthenticated() ? (
@@ -69,7 +68,7 @@ class SportDisplay extends React.Component {
 											<Link to={'/events/create'}>
 												<button
 													type='button'
-													className='btn btn-outline-light sport-arr-btn'
+													className='btn btn-outline-light btn-presets'
 													type='button'
 												>
 													Add Event
@@ -78,14 +77,14 @@ class SportDisplay extends React.Component {
 											<Link to={`/sports/${sportId}/amend`}>
 												<button
 													type='button'
-													className='btn btn-outline-light sport-arr-btn'
+													className='btn btn-outline-light btn-presets'
 													type='button'
 												>
 													Amend Sport
 												</button>
 											</Link>
 											<button
-												className='btn btn-danger sport-arr-btn'
+												className='btn btn-danger btn-presets'
 												onClick={this.deleteSport}
 											>
 												Delete Sport
@@ -96,7 +95,7 @@ class SportDisplay extends React.Component {
 							) : null}
 
 							<div className='right-column'>
-								<p className='sport-description text-justify'>
+								<p className='content-preset text-justify'>
 									{this.state.sport.description}
 								</p>
 							</div>
