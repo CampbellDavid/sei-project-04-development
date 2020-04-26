@@ -71,7 +71,7 @@ class ShoppingCart extends React.Component {
 											<Card.Title>{item.title}</Card.Title>
 
 											<div className='mt-auto'>
-												<Card.Subtitle className='pt-2 pb-2'>
+												<Card.Subtitle className='pt-2 pb-4'>
 													{this.currency.format(item.price)}
 												</Card.Subtitle>
 
