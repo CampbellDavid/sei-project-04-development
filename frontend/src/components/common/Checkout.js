@@ -42,55 +42,65 @@ class Checkout extends React.Component {
 		const userId = Auth.getPayload().sub
 		console.log(userId)
 		return (
-			<section className='bg-black body-div'>
-				<div className='body-presets'>
-					<h1 className='title-head font'>Checkout</h1>
-					<div className='row'>
-						{user.shopping_cart.map((item) => {
-							return (
-								<Card className='m-3' style={{ width: '18rem' }}>
-									<Card.Img
-										style={{ height: '50%' }}
-										variant='top'
-										src={item.image}
-									/>
-									<Card.Body className='d-flex flex-column'>
-										<Card.Title>{item.title}</Card.Title>
+			<div className='bg-set-9'>
+				<div className='bg-grad'>
+					<section className='body-div'>
+						<div className='body-presets'>
+							<h1 className='title-head font'>Checkout</h1>
+							<div className='row'>
+								{user.shopping_cart.map((item) => {
+									return (
+										<Card className='m-3' style={{ width: '18rem' }}>
+											<Card.Img
+												style={{ height: '50%' }}
+												variant='top'
+												src={item.image}
+											/>
+											<Card.Body className='d-flex flex-column'>
+												<Card.Title>{item.title}</Card.Title>
 
-										<div className='mt-auto'>
-											<Card.Subtitle className='pt-2 pb-2'>
-												{this.currency.format(item.price)}
-											</Card.Subtitle>
+												<div className='mt-auto'>
+													<Card.Subtitle className='pt-2 pb-2'>
+														{this.currency.format(item.price)}
+													</Card.Subtitle>
 
-											<div className='center-item-screen'>
-												<Button
-													variant='dark'
-													href={`/events/${item.id}`}
-													className='mr-1'
-												>
-													View Event
-												</Button>
-											</div>
-										</div>
-									</Card.Body>
-								</Card>
-							)
-						})}
-					</div>
-					<p className='font sub-head'>Total: {this.getTotalPrice()}</p>
-					<hr className='divider-small' />
-					<Link to='/secure_payment'>
-						<button type='button' className='btn btn-outline-light btn-presets'>
-							Proceed to payment
-						</button>
-					</Link>
-					<Link to={`/user/${userId}/cart`}>
-						<button type='button' className='btn btn-outline-light btn-presets'>
-							Back
-						</button>
-					</Link>
+													<div className='center-item-screen'>
+														<Button
+															variant='dark'
+															href={`/events/${item.id}`}
+															className='mr-1'
+														>
+															View Event
+														</Button>
+													</div>
+												</div>
+											</Card.Body>
+										</Card>
+									)
+								})}
+							</div>
+							<p className='font sub-head'>Total: {this.getTotalPrice()}</p>
+
+							<Link to='/secure_payment'>
+								<button
+									type='button'
+									className='btn btn-outline-light btn-presets'
+								>
+									Proceed to payment
+								</button>
+							</Link>
+							<Link to={`/user/${userId}/cart`}>
+								<button
+									type='button'
+									className='btn btn-outline-light btn-presets'
+								>
+									Back
+								</button>
+							</Link>
+						</div>
+					</section>
 				</div>
-			</section>
+			</div>
 		)
 	}
 }

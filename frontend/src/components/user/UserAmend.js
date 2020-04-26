@@ -8,7 +8,7 @@ class UserAmend extends React.Component {
 	state = {
 		user: null,
 		data: {},
-		errors: null
+		errors: null,
 	}
 
 	async componentDidMount() {
@@ -22,14 +22,14 @@ class UserAmend extends React.Component {
 		}
 	}
 
-	handleChange = e => {
+	handleChange = (e) => {
 		const data = { ...this.state.data, [e.target.name]: e.target.value }
 		const user = { ...this.state.user, [e.target.name]: e.target.value }
 		const errors = { ...this.state.errors, [e.target.name]: '' }
 		this.setState({ user, data, errors })
 	}
 
-	handleSubmit = async e => {
+	handleSubmit = async (e) => {
 		e.preventDefault()
 		const userId = Auth.getPayload().sub
 		try {
@@ -45,7 +45,7 @@ class UserAmend extends React.Component {
 		if (!this.state.user) return null
 		// const { user } = this.state
 		return (
-			<body className='has-navbar-fixed-top'>
+			<section>
 				{Auth.isAuthenticated() && (
 					<UserForm
 						user={this.state.user}
@@ -54,7 +54,7 @@ class UserAmend extends React.Component {
 						errors={this.state.errors}
 					/>
 				)}
-			</body>
+			</section>
 		)
 	}
 }

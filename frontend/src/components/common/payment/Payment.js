@@ -85,107 +85,113 @@ class Payment extends React.Component {
 		const { name, number, expiry, cvc, focused, issuer, formData } = this.state
 		console.log(this.state.user)
 		return (
-			<section className='bg-black body-div'>
-				<div className='body-presets'>
-					<div className='center-item-screen'>
-						<h1 className='title-head font m-0'>Secure Payment</h1>
-					</div>
-					<hr className='divider' />
-					<div key='Payment'>
-						<div className='App-payment'>
-							<Card
-								number={number}
-								name={name}
-								expiry={expiry}
-								cvc={cvc}
-								focused={focused}
-								callback={this.handleCallback}
-							/>
-							<div className='form-wrapper center-item-screen'>
-								<form ref={(c) => (this.form = c)} onSubmit={this.handleSubmit}>
-									<div className='main-form-group'>
-										<input
-											type='tel'
-											name='number'
-											id='number'
-											className='main-form-field'
-											placeholder='Card Number'
-											pattern='[\d| ]{16,22}'
-											required
-											onChange={this.handleInputChange}
-											onFocus={this.handleInputFocus}
-										/>
-										<label htmlFor='number' className='main-form-label'>
-											Card Number
-										</label>
+			<div className='bg-set-8'>
+				<div className='bg-grad'>
+					<section className='body-div'>
+						<div className='body-presets'>
+							<div className='center-item-screen mb-2'>
+								<h1 className='title-head font m-0'>Secure Payment</h1>
+							</div>
+
+							<div key='Payment'>
+								<div className='App-payment'>
+									<Card
+										number={number}
+										name={name}
+										expiry={expiry}
+										cvc={cvc}
+										focused={focused}
+										callback={this.handleCallback}
+									/>
+									<div className='form-wrapper center-item-screen'>
+										<form
+											ref={(c) => (this.form = c)}
+											onSubmit={this.handleSubmit}
+										>
+											<div className='main-form-group'>
+												<input
+													type='tel'
+													name='number'
+													id='number'
+													className='main-form-field'
+													placeholder='Card Number'
+													pattern='[\d| ]{16,22}'
+													required
+													onChange={this.handleInputChange}
+													onFocus={this.handleInputFocus}
+												/>
+												<label htmlFor='number' className='main-form-label'>
+													Card Number
+												</label>
+											</div>
+											<div className='main-form-group'>
+												<input
+													type='text'
+													name='name'
+													id='name'
+													className='main-form-field'
+													placeholder='Name'
+													required
+													onChange={this.handleInputChange}
+													onFocus={this.handleInputFocus}
+												/>
+												<label htmlFor='name' className='main-form-label'>
+													Cardholder's Name
+												</label>
+											</div>
+											<div className='row'>
+												<div className='col-6 main-form-group'>
+													<input
+														type='tel'
+														name='expiry'
+														id='expiry'
+														className='main-form-field'
+														placeholder='Valid Thru'
+														pattern='\d\d/\d\d'
+														required
+														onChange={this.handleInputChange}
+														onFocus={this.handleInputFocus}
+													/>
+													<label htmlFor='expiry' className='main-form-label'>
+														Card Expiry Date
+													</label>
+												</div>
+												<div className='col-6 main-form-group'>
+													<input
+														type='tel'
+														name='cvc'
+														id='cvc'
+														className='main-form-field'
+														placeholder='CVC'
+														pattern='\d{3,4}'
+														required
+														onChange={this.handleInputChange}
+														onFocus={this.handleInputFocus}
+													/>
+													<label htmlFor='cvc' className='main-form-label'>
+														CVC
+													</label>
+												</div>
+											</div>
+											<input type='hidden' name='issuer' value={issuer} />
+
+											<p className='font sub-head-2 mt-4'>
+												Total: {this.getTotalPrice()}
+											</p>
+
+											<div className='form-actions center-item-screen'>
+												<button className='btn btn-success btn-presets'>
+													Proceed
+												</button>
+											</div>
+										</form>
 									</div>
-									<div className='main-form-group'>
-										<input
-											type='text'
-											name='name'
-											id='name'
-											className='main-form-field'
-											placeholder='Name'
-											required
-											onChange={this.handleInputChange}
-											onFocus={this.handleInputFocus}
-										/>
-										<label htmlFor='name' className='main-form-label'>
-											Cardholder's Name
-										</label>
-									</div>
-									<div className='row'>
-										<div className='col-6 main-form-group'>
-											<input
-												type='tel'
-												name='expiry'
-												id='expiry'
-												className='main-form-field'
-												placeholder='Valid Thru'
-												pattern='\d\d/\d\d'
-												required
-												onChange={this.handleInputChange}
-												onFocus={this.handleInputFocus}
-											/>
-											<label htmlFor='expiry' className='main-form-label'>
-												Card Expiry Date
-											</label>
-										</div>
-										<div className='col-6 main-form-group'>
-											<input
-												type='tel'
-												name='cvc'
-												id='cvc'
-												className='main-form-field'
-												placeholder='CVC'
-												pattern='\d{3,4}'
-												required
-												onChange={this.handleInputChange}
-												onFocus={this.handleInputFocus}
-											/>
-											<label htmlFor='cvc' className='main-form-label'>
-												CVC
-											</label>
-										</div>
-									</div>
-									<input type='hidden' name='issuer' value={issuer} />
-									<hr className='divider' />
-									<p className='font sub-head-2'>
-										Total: {this.getTotalPrice()}
-									</p>
-									<hr className='divider' />
-									<div className='form-actions center-item-screen'>
-										<button className='btn btn-success btn-presets'>
-											Proceed
-										</button>
-									</div>
-								</form>
-								<hr className='divider' />
+								</div>
 							</div>
 						</div>
-					</div>
+					</section>
 				</div>
-			</section>
+			</div>
 		)
 	}
 }
