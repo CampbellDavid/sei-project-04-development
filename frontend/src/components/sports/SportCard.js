@@ -7,7 +7,7 @@ const SportCard = ({ id, name, image }) => (
 		<Card.Body>
 			<Card.Title>{name}</Card.Title>
 			<div className='center-item-screen'>
-				<Button variant='dark' href={`events/${id}`}>
+				<Button variant='dark' href={`sports/${id}`}>
 					View Sport
 				</Button>
 			</div>
