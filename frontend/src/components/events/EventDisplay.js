@@ -125,8 +125,8 @@ class EventDisplay extends React.Component {
 									<p className='desc-preset sub-font text-justify'>
 										{this.state.event.description}
 									</p>
-									<div className='center-item-screen'>
-										<div className='buttons mt-3 mb-3'>
+									<div className='text-center'>
+										<div className='m-3'>
 											{Auth.isAuthenticated() ? (
 												wishListArr && wishListArr.includes(eventId) ? (
 													<button
@@ -195,11 +195,11 @@ class EventDisplay extends React.Component {
 										</div>
 									</div>
 								</div>
-								<div className='col-lg-6'>
+								<div className='col-lg-6 text-center'>
 									<img
 										src={this.state.event.image}
 										alt={this.state.event.title}
-										className='img-disp mr-4 mb-3 img-responsive'
+										className='img-responsive rounded'
 									/>
 								</div>
 							</div>

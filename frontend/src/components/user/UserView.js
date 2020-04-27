@@ -28,18 +28,19 @@ class UserView extends React.Component {
 		return (
 			<section className='body-div bg-set-1'>
 				<div className='body-presets bg-grad'>
-					<h1 className='title-head font text-center m-0'>Profile</h1>
+					<h1 className='title-head font text-center m-0 pb-2'>Profile</h1>
 
 					<div className='grid'>
-						<div className='row'>
-							<div className='float-left'>
-								<div className='container-fluid text-center'>
+						<div className='col text-center'>
+							<div className='col-md-3 col-sm-12'>
+								<div className='col container-fluid'>
 									<img
-										className='pro-img m-0'
+										className='rounded-circle img-thumbnail'
+										style={{ maxWidth: '200px' }}
 										src={user.profile_image}
 										alt={user.username}
 									/>
-									<p className='sub-head font ml-0 mr-0 mb-0 mt-3'>
+									<p className='sub-head font ml-0 mr-0 mb-0 mt-3 nowrap'>
 										{user.first_name} {user.last_name}
 									</p>
 								</div>

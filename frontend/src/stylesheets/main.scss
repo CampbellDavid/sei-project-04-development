@@ -7,6 +7,10 @@ $gray: #9b9b9b;
 
 // General
 
+.nowrap {
+	white-space: nowrap;
+}
+
 .font {
 	font-family: 'Teko', sans-serif;
 	color: #fff;
@@ -191,12 +195,6 @@ $gray: #9b9b9b;
 	margin: 10px;
 }
 
-.img-disp {
-	height: 300px;
-	width: 600px;
-	border-radius: 15px;
-}
-
 .desc-preset {
 	margin: 5px;
 	font-size: 18px;
@@ -298,15 +296,6 @@ $gray: #9b9b9b;
 	&:invalid {
 		box-shadow: none;
 	}
-}
-
-// User
-
-.pro-img {
-	border: 3px solid #ffffff;
-	border-radius: 50%;
-	height: 220px;
-	width: 220px;
 }
 
 // User form

@@ -43,16 +43,25 @@ class SportDisplay extends React.Component {
 				<div className='bg-grad'>
 					<section className='body-div'>
 						<div className='body-presets'>
-							<h1 className='title-head font text-center m-0'>
+							<h1 className='title-head font text-center m-0 pb-3'>
 								{this.state.sport.name}
 							</h1>
-							<div className='center-item-screen'>
-								<img
-									src={this.state.sport.image}
-									alt={this.state.sport.name}
-									className='img-disp m-0 img-responsive'
-								/>
+							<div className='row'>
+								<div className='col-6'>
+									<img
+										src={this.state.sport.image}
+										alt={this.state.sport.name}
+										className='m-0 img-responsive rounded'
+									/>
+								</div>
+
+								<div className='col-6'>
+									<p className='content-preset text-justify mt-2'>
+										{this.state.sport.description}
+									</p>
+								</div>
 							</div>
+
 							<div className='events-section mb-4'>
 								<h3 className='sub-head font text-center m-0 pt-4'>Events</h3>
 								<div className='center-item-screen'>
@@ -98,12 +107,6 @@ class SportDisplay extends React.Component {
 									)}
 								</>
 							) : null}
-
-							<div className='right-column'>
-								<p className='content-preset text-justify mt-2'>
-									{this.state.sport.description}
-								</p>
-							</div>
 						</div>
 					</section>
 				</div>

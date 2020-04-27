@@ -80,7 +80,9 @@ class Checkout extends React.Component {
 								})}
 							</div>
 							<div className='center-item-screen'>
-								<p className='font sub-head'>Total: {this.getTotalPrice()}</p>
+								<p className='font sub-head m-0'>
+									Total: {this.getTotalPrice()}
+								</p>
 							</div>
 							<div className='center-item-screen'>
 								<Link to='/secure_payment'>
