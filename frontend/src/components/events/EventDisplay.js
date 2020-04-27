@@ -121,7 +121,7 @@ class EventDisplay extends React.Component {
 							<h1 className='title-head font'>{this.state.event.title}</h1>
 							<div className='row'>
 								<div className='col-lg-6'>
-									<h3 className='sub-head font'>
+									<h3 className='sub-head font nowrap'>
 										{this.state.event.price === 0
 											? 'Free'
 											: this.currency.format(this.state.event.price)}{' '}
