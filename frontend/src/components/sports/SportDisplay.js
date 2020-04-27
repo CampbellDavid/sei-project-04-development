@@ -64,12 +64,27 @@ class SportDisplay extends React.Component {
 
 							<div className='events-section mb-4'>
 								<h3 className='sub-head font text-center m-0 pt-4'>Events</h3>
-								<div className='center-item-screen'>
+								<div className='center-item-screen row'>
 									{this.state.sport.events.map((event) => {
+										console.log(event)
 										return (
-											<p className='content-preset sub-font' key={event.title}>
-												<Link to={`/events/${event.id}`}>{event.title}</Link>
-											</p>
+											<Card className='m-3' style={{ width: '13rem' }}>
+												<Card.Img
+													style={{ height: '50%' }}
+													variant='top'
+													src={event.image}
+												/>
+												<Card.Body>
+													<Card.Title className='text-center text-uppercase'>
+														{event.title}
+													</Card.Title>
+													<div className='center-item-screen'>
+														<Button variant='dark' href={`/events/${event.id}`}>
+															View Event
+														</Button>
+													</div>
+												</Card.Body>
+											</Card>
 										)
 									})}
 								</div>

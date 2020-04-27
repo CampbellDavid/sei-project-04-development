@@ -3,6 +3,7 @@ import axios from 'axios'
 import Auth from '../../lib/auth'
 import { Link } from 'react-router-dom'
 // import image from "../../assets/user-bg.jpg"
+import { Card, Button } from 'react-bootstrap'
 
 class UserView extends React.Component {
 	state = {
@@ -39,7 +40,7 @@ class UserView extends React.Component {
 									src={user.profile_image}
 									alt={user.username}
 								/>
-								<p className='sub-head font ml-0 mr-0 mb-0 mt-3 nowrap'>
+								<p className='sub-head font m-0 pt-3 nowrap'>
 									{user.first_name} {user.last_name}
 								</p>
 							</div>
@@ -51,12 +52,28 @@ class UserView extends React.Component {
 								</p>
 							</div>
 							<div className='p-2'>
-								<h3 className='content-preset sub-font'>Wish List: </h3>
-								{user.wish_list.map((item) => (
-									<p className='content-preset sub-font' key={item.title}>
-										<Link to={`/events/${item.id}`}>{item.title}</Link>
-									</p>
-								))}
+								<h3 className='sub-head font'>Wish List:</h3>
+								<div className='row'>
+									{user.wish_list.map((item) => (
+										<Card className='m-3' style={{ width: '13rem' }}>
+											<Card.Img
+												style={{ height: '50%' }}
+												variant='top'
+												src={item.image}
+											/>
+											<Card.Body>
+												<Card.Title className='text-center text-uppercase'>
+													{item.title}
+												</Card.Title>
+												<div className='center-item-screen'>
+													<Button variant='dark' href={`/events/${item.id}`}>
+														View Event
+													</Button>
+												</div>
+											</Card.Body>
+										</Card>
+									))}
+								</div>
 							</div>
 						</div>
 

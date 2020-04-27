@@ -15,7 +15,7 @@ class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('id', 'title')
+        fields = ('id', 'title', 'image')
 
 
 class SportSerializer(serializers.ModelSerializer):
