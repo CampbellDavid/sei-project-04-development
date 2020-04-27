@@ -141,10 +141,10 @@ class GroupCard extends React.Component {
 						</div>
 					) : null}
 
-					<div className='center-item-screen'>
+					<div className='text-center'>
 						{group.attendees !== null ? (
 							Auth.isAuthenticated() ? (
-								<div className='buttons'>
+								<div>
 									{group.attendees.some(
 										(attendee) => attendee.id === userId
 									) ? (
