@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom'
 import Auth from '../../lib/auth'
 import GroupCard from '../groups/GroupCard'
 import Moment from 'moment'
+import {
+	faStar,
+	faTrash,
+	faShoppingCart,
+	faEdit,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class EventDisplay extends React.Component {
 	state = {
@@ -130,11 +137,11 @@ class EventDisplay extends React.Component {
 											{Auth.isAuthenticated() ? (
 												wishListArr && wishListArr.includes(eventId) ? (
 													<button
-														className='btn btn-outline-light btn-presets'
+														className='btn btn-light btn-presets'
 														type='button'
 														onClick={this.addToWishList}
 													>
-														Remove from Wishlist
+														<FontAwesomeIcon icon={faStar} />
 													</button>
 												) : (
 													<button
@@ -142,7 +149,7 @@ class EventDisplay extends React.Component {
 														type='button'
 														onClick={this.addToWishList}
 													>
-														Add to Wishlist
+														<FontAwesomeIcon icon={faStar} />
 													</button>
 												)
 											) : null}
@@ -151,11 +158,11 @@ class EventDisplay extends React.Component {
 												{Auth.isAuthenticated() ? (
 													cartArr && cartArr.includes(eventId) ? (
 														<button
-															className='btn btn-outline-light btn-presets'
+															className='btn btn-light btn-presets'
 															type='button'
 															onClick={this.addToShopCart}
 														>
-															Remove from Cart
+															<FontAwesomeIcon icon={faShoppingCart} />
 														</button>
 													) : (
 														<button
@@ -163,7 +170,7 @@ class EventDisplay extends React.Component {
 															type='button'
 															onClick={this.addToShopCart}
 														>
-															Add to Cart
+															<FontAwesomeIcon icon={faShoppingCart} />
 														</button>
 													)
 												) : null}
@@ -178,7 +185,7 @@ class EventDisplay extends React.Component {
 																	className='btn btn-outline-light btn-presets'
 																	type='button'
 																>
-																	Amend Event
+																	<FontAwesomeIcon icon={faEdit} />
 																</button>
 															</Link>
 															<button
@@ -186,7 +193,7 @@ class EventDisplay extends React.Component {
 																type='button'
 																onClick={this.deleteEvent}
 															>
-																Delete Event
+																<FontAwesomeIcon icon={faTrash} />
 															</button>
 														</div>
 													)}
