@@ -139,40 +139,40 @@ class Payment extends React.Component {
 													Cardholder's Name
 												</label>
 											</div>
-											<div className='row'>
-												<div className='col-6 main-form-group'>
-													<input
-														type='tel'
-														name='expiry'
-														id='expiry'
-														className='main-form-field'
-														placeholder='Valid Thru'
-														pattern='\d\d/\d\d'
-														required
-														onChange={this.handleInputChange}
-														onFocus={this.handleInputFocus}
-													/>
-													<label htmlFor='expiry' className='main-form-label'>
-														Card Expiry Date
-													</label>
-												</div>
-												<div className='col-6 main-form-group'>
-													<input
-														type='tel'
-														name='cvc'
-														id='cvc'
-														className='main-form-field'
-														placeholder='CVC'
-														pattern='\d{3,4}'
-														required
-														onChange={this.handleInputChange}
-														onFocus={this.handleInputFocus}
-													/>
-													<label htmlFor='cvc' className='main-form-label'>
-														CVC
-													</label>
-												</div>
+
+											<div className='main-form-group'>
+												<input
+													type='tel'
+													name='expiry'
+													id='expiry'
+													className='main-form-field'
+													placeholder='Valid Thru'
+													pattern='\d\d/\d\d'
+													required
+													onChange={this.handleInputChange}
+													onFocus={this.handleInputFocus}
+												/>
+												<label htmlFor='expiry' className='main-form-label'>
+													Card Expiry Date
+												</label>
 											</div>
+											<div className='main-form-group'>
+												<input
+													type='tel'
+													name='cvc'
+													id='cvc'
+													className='main-form-field'
+													placeholder='CVC'
+													pattern='\d{3,4}'
+													required
+													onChange={this.handleInputChange}
+													onFocus={this.handleInputFocus}
+												/>
+												<label htmlFor='cvc' className='main-form-label'>
+													CVC
+												</label>
+											</div>
+
 											<input type='hidden' name='issuer' value={issuer} />
 
 											<p className='font sub-head-2 mt-4'>
