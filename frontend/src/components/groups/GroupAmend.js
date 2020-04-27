@@ -13,6 +13,8 @@ class GroupAmend extends React.Component {
 	}
 
 	async componentDidMount() {
+		window.scrollTo(0, 0)
+
 		const groupId = this.props.location.pathname.charAt(23)
 		const eventId = this.props.match.params.id
 		console.log('groupId', groupId)

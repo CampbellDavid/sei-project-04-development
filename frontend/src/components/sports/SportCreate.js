@@ -9,6 +9,10 @@ class SportCreate extends React.Component {
 		errors: null,
 	}
 
+	componentDidMount() {
+		window.scrollTo(0, 0)
+	}
+
 	handleChange = (e) => {
 		const sport = { ...this.state.sport, [e.target.name]: e.target.value }
 		const errors = { ...this.state.errors, [e.target.name]: '' }

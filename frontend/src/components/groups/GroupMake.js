@@ -10,6 +10,10 @@ class GroupMake extends React.Component {
 		},
 	}
 
+	componentDidMount() {
+		window.scrollTo(0, 0)
+	}
+
 	handleChange = ({ target: { name, value } }) => {
 		const group = { ...this.state.group, [name]: value }
 		this.setState({ group })

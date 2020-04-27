@@ -11,6 +11,7 @@ class SportAmend extends React.Component {
 	}
 
 	async componentDidMount() {
+		window.scrollTo(0, 0)
 		const sportId = this.props.match.params.id
 		try {
 			const response = await axios.get(`/api/sports/${sportId}/`)
