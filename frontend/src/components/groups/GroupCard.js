@@ -100,13 +100,13 @@ class GroupCard extends React.Component {
 				<div className='card-div'>
 					<div className='row'>
 						<div className='col-6'>
-							<h2 className='text-left font sub-head m-0'>
+							<h2 className='text-left font sub-head m-0 nowrap'>
 								Group Name: '{group.group_name}'
 							</h2>
 						</div>
 						<div className='col-6'>
 							{lead && (
-								<h2 className='text-right font sub-head m-0'>
+								<h2 className='text-right font sub-head m-0 nowrap'>
 									Leader: {lead.first_name}
 								</h2>
 							)}
