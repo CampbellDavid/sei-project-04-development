@@ -6,7 +6,6 @@ import {
 	formatCreditCardNumber,
 	formatCVC,
 	formatExpirationDate,
-	formatFormData,
 } from './utils'
 import 'react-credit-cards/es/styles-compiled.css'
 
@@ -82,7 +81,7 @@ class Payment extends React.Component {
 
 	render() {
 		if (!this.state.user) return null
-		const { name, number, expiry, cvc, focused, issuer, formData } = this.state
+		const { name, number, expiry, cvc, focused, issuer } = this.state
 		console.log(this.state.user)
 		return (
 			<div className='bg-set-8'>

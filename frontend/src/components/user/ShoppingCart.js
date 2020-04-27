@@ -49,7 +49,7 @@ class ShoppingCart extends React.Component {
 		const userId = Auth.getPayload().sub
 		console.log('rendering')
 		if (!this.state.user) return null
-		const { user } = this.state
+
 		return (
 			<section className='bg-set-4 body-div'>
 				<div className='body-presets bg-grad'>

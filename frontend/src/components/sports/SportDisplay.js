@@ -97,7 +97,6 @@ class SportDisplay extends React.Component {
 												<button
 													type='button'
 													className='btn btn-outline-light btn-presets'
-													type='button'
 												>
 													Add Event
 												</button>
@@ -106,7 +105,6 @@ class SportDisplay extends React.Component {
 												<button
 													type='button'
 													className='btn btn-outline-light btn-presets'
-													type='button'
 												>
 													Amend Sport
 												</button>
