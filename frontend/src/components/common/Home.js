@@ -66,9 +66,7 @@ const Home = () => (
 										quis excepteur. Pariatur sint sint irure ipsum nostrud ad
 										proident anim anim incididunt aliquip mollit esse proident.
 										Dolore adipisicing ut ad eu culpa adipisicing voluptate anim
-										enim eu. Incididunt anim ea tempor proident. Non nisi
-										laboris fugiat incididunt ullamco in aliquip ex enim enim.
-										Culpa cupidatat excepteur commodo sint excepteur sint.
+										enim eu.
 									</p>
 									<p>
 										Fugiat id exercitation in sit exercitation esse. Esse
@@ -118,7 +116,7 @@ const Home = () => (
 						</div>
 						<div className='col-xl-4 bg-dark p-0'>
 							<div>
-								<img src={SubImg} alt='Yosemite' />
+								<img src={SubImg} style={{ width: '100%' }} alt='Yosemite' />
 							</div>
 						</div>
 					</div>
