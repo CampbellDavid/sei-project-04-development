@@ -1,9 +1,8 @@
 import React from 'react'
 import './stylesheets/main.scss'
-import 'bulma'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import 'font-awesome/css/font-awesome.min.css'
 
 import NavBar from './components/common/NavBar'
 import SecureRoute from './components/common/SecureRoute'
