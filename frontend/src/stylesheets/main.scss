@@ -332,3 +332,54 @@ $gray: #9b9b9b;
 	color: #ffffff;
 	font-size: 20px;
 }
+
+.btn-circle {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #ffffff;
+	text-align: center;
+	padding: 6px 0;
+	background-color: transparent;
+	border-radius: 50%;
+	color: #ffffff;
+}
+
+.btn-circle:hover {
+	background-color: #ffffff;
+	color: #000000;
+	transition: 0.3s;
+}
+
+.btn-circle-full {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #ffffff;
+	text-align: center;
+	padding: 6px 0;
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 50%;
+}
+
+.btn-circle-full:hover {
+	background-color: transparent;
+	color: #ffffff;
+	transition: 0.3s;
+}
+
+.btn-circle-danger {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #ff0000;
+	text-align: center;
+	padding: 6px 0;
+	background-color: transparent;
+	border-radius: 50%;
+	color: #ff0000;
+}
+
+.btn-circle-danger:hover {
+	background-color: #ff0000;
+	color: #000000;
+	transition: 0.3s;
+}

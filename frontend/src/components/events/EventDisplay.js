@@ -132,12 +132,12 @@ class EventDisplay extends React.Component {
 									<p className='desc-preset sub-font text-justify'>
 										{this.state.event.description}
 									</p>
-									<div className='text-center'>
-										<div className='m-3'>
+									<div>
+										<div className='m-3 d-flex float-right'>
 											{Auth.isAuthenticated() ? (
 												wishListArr && wishListArr.includes(eventId) ? (
 													<button
-														className='btn btn-light btn-presets'
+														className='btn-circle-full m-2'
 														type='button'
 														onClick={this.addToWishList}
 													>
@@ -145,7 +145,7 @@ class EventDisplay extends React.Component {
 													</button>
 												) : (
 													<button
-														className='btn btn-outline-light btn-presets'
+														className='btn-circle m-2'
 														type='button'
 														onClick={this.addToWishList}
 													>
@@ -154,27 +154,25 @@ class EventDisplay extends React.Component {
 												)
 											) : null}
 
-											<>
-												{Auth.isAuthenticated() ? (
-													cartArr && cartArr.includes(eventId) ? (
-														<button
-															className='btn btn-light btn-presets'
-															type='button'
-															onClick={this.addToShopCart}
-														>
-															<FontAwesomeIcon icon={faShoppingCart} />
-														</button>
-													) : (
-														<button
-															className='btn btn-outline-light btn-presets'
-															type='button'
-															onClick={this.addToShopCart}
-														>
-															<FontAwesomeIcon icon={faShoppingCart} />
-														</button>
-													)
-												) : null}
-											</>
+											{Auth.isAuthenticated() ? (
+												cartArr && cartArr.includes(eventId) ? (
+													<button
+														className='btn-circle-full m-2'
+														type='button'
+														onClick={this.addToShopCart}
+													>
+														<FontAwesomeIcon icon={faShoppingCart} />
+													</button>
+												) : (
+													<button
+														className='btn-circle m-2'
+														type='button'
+														onClick={this.addToShopCart}
+													>
+														<FontAwesomeIcon icon={faShoppingCart} />
+													</button>
+												)
+											) : null}
 
 											{Auth.isAuthenticated() ? (
 												<>
@@ -182,14 +180,14 @@ class EventDisplay extends React.Component {
 														<div>
 															<Link to={`/events/${eventId}/amend`}>
 																<button
-																	className='btn btn-outline-light btn-presets'
+																	className='btn-circle m-2'
 																	type='button'
 																>
 																	<FontAwesomeIcon icon={faEdit} />
 																</button>
 															</Link>
 															<button
-																className='btn btn-danger btn-presets'
+																className='btn-circle-danger m-2'
 																type='button'
 																onClick={this.deleteEvent}
 															>
