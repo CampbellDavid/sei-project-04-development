@@ -129,7 +129,7 @@ class EventDisplay extends React.Component {
 										{Moment(eventDate).format('lll')}
 									</h3>
 
-									<p className='desc-preset sub-font text-justify'>
+									<p className='content-preset sub-font text-justify'>
 										{this.state.event.description}
 									</p>
 									<div className='text-center'>
