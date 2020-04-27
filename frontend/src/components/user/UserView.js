@@ -51,9 +51,10 @@ class UserView extends React.Component {
 									{user.bio}
 								</p>
 							</div>
-							<div className='p-2'>
-								<h3 className='sub-head font'>Wish List:</h3>
-								<div className='row'>
+							<div className='p-2 col'>
+								<h3 className='sub-head font'>Wish List</h3>
+
+								<div className='center-item-screen row'>
 									{user.wish_list.map((item) => (
 										<Card className='m-3' style={{ width: '13rem' }}>
 											<Card.Img
