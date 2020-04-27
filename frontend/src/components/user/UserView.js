@@ -33,16 +33,18 @@ class UserView extends React.Component {
 
 					<div className='grid'>
 						<div className='col-md-3 col-sm-12'>
-							<div className='text-center'>
-								<img
-									className='rounded-circle img-thumbnail'
-									style={{ maxWidth: '200px' }}
-									src={user.profile_image}
-									alt={user.username}
-								/>
-								<p className='sub-head font m-0 pt-3 nowrap'>
-									{user.first_name} {user.last_name}
-								</p>
+							<div className='center-item-screen'>
+								<div className='text-center'>
+									<img
+										className='rounded-circle img-thumbnail'
+										style={{ maxWidth: '200px' }}
+										src={user.profile_image}
+										alt={user.username}
+									/>
+									<p className='sub-head font m-0 pt-3 nowrap'>
+										{user.first_name} {user.last_name}
+									</p>
+								</div>
 							</div>
 						</div>
 						<div className='row mt-2'>
