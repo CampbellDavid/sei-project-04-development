@@ -132,8 +132,8 @@ class EventDisplay extends React.Component {
 									<p className='desc-preset sub-font text-justify'>
 										{this.state.event.description}
 									</p>
-									<div>
-										<div className='m-3 d-flex float-right'>
+									<div className='text-center'>
+										<div className='m-3 d-inline-flex'>
 											{Auth.isAuthenticated() ? (
 												wishListArr && wishListArr.includes(eventId) ? (
 													<button
