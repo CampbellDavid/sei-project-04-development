@@ -47,16 +47,16 @@ class SportDisplay extends React.Component {
 								{this.state.sport.name}
 							</h1>
 							<div className='row'>
-								<div className='col-6'>
+								<div className='col-md-6'>
 									<p className='content-preset text-justify mt-2'>
 										{this.state.sport.description}
 									</p>
 								</div>
-								<div className='col-6'>
+								<div className='col-md-6'>
 									<img
 										src={this.state.sport.image}
 										alt={this.state.sport.name}
-										className='m-0 img-responsive rounded'
+										className='img-responsive rounded m-0 w-100'
 									/>
 								</div>
 							</div>

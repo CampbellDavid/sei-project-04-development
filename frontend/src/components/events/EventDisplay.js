@@ -204,7 +204,7 @@ class EventDisplay extends React.Component {
 									<img
 										src={this.state.event.image}
 										alt={this.state.event.title}
-										className='img-responsive rounded mb-3'
+										className='img-responsive rounded mb-3 w-100'
 									/>
 								</div>
 							</div>
