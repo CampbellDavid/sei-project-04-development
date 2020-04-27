@@ -68,6 +68,7 @@ const EventForm = ({ data, sportOps, handleChange, handleSubmit }) => {
 										name='description'
 										id='description'
 										value={data.description}
+										style={{ resize: 'none' }}
 										required
 									/>
 								</div>
@@ -98,7 +99,7 @@ const EventForm = ({ data, sportOps, handleChange, handleSubmit }) => {
 										required
 									/>
 									<label htmlFor='image' className='main-form-label'>
-										Image
+										Image URL
 									</label>
 								</div>
 

@@ -52,6 +52,7 @@ const SportForm = ({ sport, handleChange, handleSubmit }) => {
 										name='description'
 										id='description'
 										value={sport.description}
+										style={{ resize: 'none' }}
 										required
 									/>
 								</div>

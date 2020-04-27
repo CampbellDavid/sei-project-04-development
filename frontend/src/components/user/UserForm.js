@@ -52,6 +52,7 @@ const UserForm = ({ user, handleChange, handleSubmit }) => {
 								placeholder='Bio'
 								name='bio'
 								id='bio'
+								style={{ resize: 'none' }}
 								value={user.bio}
 							/>
 						</div>
@@ -71,7 +72,7 @@ const UserForm = ({ user, handleChange, handleSubmit }) => {
 							<input
 								className='main-user-form-field'
 								onChange={handleChange}
-								placeholder='Profile Image'
+								placeholder='Profile Image URL'
 								name='profile_image'
 								id='profile_image'
 								value={user.profile_image}
