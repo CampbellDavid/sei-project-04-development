@@ -17,11 +17,14 @@ const EventCard = ({
 	time_and_date,
 	description,
 }) => (
-	<Card className='m-3' style={{ width: '18rem' }}>
-		<Card.Img style={{ height: '30%' }} variant='top' src={image} />
+	<Card className='m-3' style={{ width: '18rem', height: '30rem' }}>
+		<Card.Img style={{ height: '35%' }} variant='top' src={image} />
 		<Card.Body className='d-flex flex-column'>
 			<Card.Title>{title}</Card.Title>
-			<Card.Text className='text-justify' style={{ fontSize: '12px' }}>
+			<Card.Text
+				className='text-justify'
+				style={{ fontSize: '12px', overflowX: 'hidden' }}
+			>
 				{description}
 			</Card.Text>
 			<div className='mt-auto'>
