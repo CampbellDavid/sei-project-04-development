@@ -60,7 +60,7 @@ class SportDisplay extends React.Component {
 							</div>
 
 							<div className='events-section mb-4'>
-								<h3 className='sub-head font'>Events</h3>
+								<h3 className='sub-head font mt-3'>Events</h3>
 								<div className='center-item-screen row'>
 									{this.state.sport.events.map((event) => {
 										return (
