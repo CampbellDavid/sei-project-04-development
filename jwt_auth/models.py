@@ -9,5 +9,5 @@ class User(AbstractUser):
         'events.Event', related_name='users', blank=True)
     shopping_cart = models.ManyToManyField(
         'events.Event', related_name='users+', blank=True)
-    bio = models.CharField(max_length=500, blank=True)
+    bio = models.CharField(max_length=1000, blank=True)
     sex = models.CharField(max_length=50, blank=True)

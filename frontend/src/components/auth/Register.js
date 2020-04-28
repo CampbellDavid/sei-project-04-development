@@ -139,10 +139,7 @@ class Register extends React.Component {
 										</label>
 									</div>
 
-									<br />
-									<br />
-
-									<div className='center-item-screen'>
+									<div className='mt-3 center-item-screen'>
 										<button
 											className='btn btn-outline-light btn-presets'
 											type='submit'

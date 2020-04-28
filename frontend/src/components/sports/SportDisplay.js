@@ -43,9 +43,7 @@ class SportDisplay extends React.Component {
 				<div className='bg-grad'>
 					<section className='body-div'>
 						<div className='body-presets'>
-							<h1 className='title-head font text-center m-0 pb-3'>
-								{this.state.sport.name}
-							</h1>
+							<h1 className='title-head font'>{this.state.sport.name}</h1>
 							<div className='row'>
 								<div className='col-md-6'>
 									<p className='content-preset text-justify mt-2'>
@@ -62,10 +60,9 @@ class SportDisplay extends React.Component {
 							</div>
 
 							<div className='events-section mb-4'>
-								<h3 className='sub-head font text-center m-0 pt-4'>Events</h3>
+								<h3 className='sub-head font'>Events</h3>
 								<div className='center-item-screen row'>
 									{this.state.sport.events.map((event) => {
-										console.log(event)
 										return (
 											<Card className='m-3' style={{ width: '13rem' }}>
 												<Card.Img

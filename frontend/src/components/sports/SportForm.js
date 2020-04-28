@@ -47,6 +47,7 @@ const SportForm = ({ sport, handleChange, handleSubmit }) => {
 										className='main-user-form-field'
 										rows='5'
 										cols='30'
+										maxLength='1000'
 										onChange={handleChange}
 										placeholder='Description'
 										name='description'

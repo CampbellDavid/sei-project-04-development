@@ -17,7 +17,7 @@ class Event(models.Model):
     time_and_date = models.DateTimeField(auto_now=False, auto_now_add=False)
     owner = models.ForeignKey(
         User, related_name='events', null=True, on_delete=models.CASCADE)
-    description = models.CharField(max_length=500)
+    description = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.title
