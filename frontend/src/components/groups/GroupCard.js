@@ -97,104 +97,100 @@ class GroupCard extends React.Component {
 		const lead = group.attendees[0]
 		return (
 			<section>
-				<div className='card-div'>
-					<div className='row'>
-						<div className='col-6'>
-							<h2 className='text-left font sub-head m-0 nowrap'>
-								Group Name: '{group.group_name}'
+				<div className='row'>
+					<div className='col-6'>
+						<h2 className='text-left font sub-head m-0 nowrap'>
+							Group Name: '{group.group_name}'
+						</h2>
+					</div>
+					<div className='col-6'>
+						{lead && (
+							<h2 className='text-right font sub-head m-0 nowrap'>
+								Leader: {lead.first_name}
 							</h2>
-						</div>
-						<div className='col-6'>
-							{lead && (
-								<h2 className='text-right font sub-head m-0 nowrap'>
-									Leader: {lead.first_name}
-								</h2>
-							)}
-						</div>
+						)}
 					</div>
-					{group.attendees !== null ? (
-						<div className='row center-item-screen'>
-							{group.attendees.map((attendee, i) => {
-								return (
-									<Card className='m-3' style={{ width: '14rem' }}>
-										<Card.Img
-											variant='top'
-											src={attendee.profile_image}
-											alt={attendee.username}
-										/>
-										<Card.Body className='d-flex flex-column'>
-											<div className='mt-auto'>
-												<div className='center-item-screen mb-1'>
-													<Card.Subtitle>
-														{attendee.first_name} {attendee.last_name}
-													</Card.Subtitle>
-												</div>
-
-												<div className='center-item-screen'>
-													<Button variant='dark' href={`/user/${attendee.id}`}>
-														View User
-													</Button>
-												</div>
+				</div>
+				{group.attendees !== null ? (
+					<div className='row center-item-screen'>
+						{group.attendees.map((attendee, i) => {
+							return (
+								<Card className='m-3' style={{ width: '14rem' }}>
+									<Card.Img
+										variant='top'
+										src={attendee.profile_image}
+										alt={attendee.username}
+									/>
+									<Card.Body className='d-flex flex-column'>
+										<div className='mt-auto'>
+											<div className='center-item-screen mb-1'>
+												<Card.Subtitle>
+													{attendee.first_name} {attendee.last_name}
+												</Card.Subtitle>
 											</div>
-										</Card.Body>
-									</Card>
-								)
-							})}
-						</div>
-					) : null}
 
-					<div className='text-center'>
-						{group.attendees !== null ? (
-							Auth.isAuthenticated() ? (
-								<div>
-									{group.attendees.some(
-										(attendee) => attendee.id === userId
-									) ? (
-										<div>
-											<button
-												type='button'
-												className='btn btn-outline-light btn-presets'
-												onClick={this.handleClick}
-											>
-												Leave
-											</button>
+											<div className='center-item-screen'>
+												<Button variant='dark' href={`/user/${attendee.id}`}>
+													View User
+												</Button>
+											</div>
 										</div>
-									) : (
-										<div>
-											<button
-												type='button'
-												className='btn btn-outline-light btn-presets'
-												onClick={this.handleClick}
-											>
-												Join
-											</button>
-										</div>
-									)}
-									{this.isOwner() && (
-										<div>
-											<Link
-												to={`/events/${group.event.id}/event_groups/${group.id}/amend`}
-											>
-												<button
-													type='button'
-													className='btn btn-outline-light btn-presets'
-												>
-													Edit
-												</button>
-											</Link>
-											<button
-												onClick={this.deleteGroup}
-												type='button'
-												className='btn btn-danger btn-presets'
-											>
-												Delete
-											</button>
-										</div>
-									)}
-								</div>
-							) : null
-						) : null}
+									</Card.Body>
+								</Card>
+							)
+						})}
 					</div>
+				) : null}
+
+				<div className='text-center'>
+					{group.attendees !== null ? (
+						Auth.isAuthenticated() ? (
+							<div>
+								{group.attendees.some((attendee) => attendee.id === userId) ? (
+									<div>
+										<button
+											type='button'
+											className='btn btn-outline-light btn-presets'
+											onClick={this.handleClick}
+										>
+											Leave
+										</button>
+									</div>
+								) : (
+									<div>
+										<button
+											type='button'
+											className='btn btn-outline-light btn-presets'
+											onClick={this.handleClick}
+										>
+											Join
+										</button>
+									</div>
+								)}
+								{this.isOwner() && (
+									<div>
+										<Link
+											to={`/events/${group.event.id}/event_groups/${group.id}/amend`}
+										>
+											<button
+												type='button'
+												className='btn btn-outline-light btn-presets'
+											>
+												Edit
+											</button>
+										</Link>
+										<button
+											onClick={this.deleteGroup}
+											type='button'
+											className='btn btn-danger btn-presets'
+										>
+											Delete
+										</button>
+									</div>
+								)}
+							</div>
+						) : null
+					) : null}
 				</div>
 			</section>
 		)

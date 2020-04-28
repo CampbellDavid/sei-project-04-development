@@ -9,7 +9,7 @@ import ImgFive from '../../assets/home/img-5.png'
 import SubImg from '../../assets/home/sub-img.png'
 
 const Home = () => (
-	<section className='home-page body-div'>
+	<section style={{ overflowX: 'hidden' }} className='home-page body-div'>
 		<div className='center-item-screen bg-home'>
 			<img src={Logo} alt='Logo' className='home-logo' />
 		</div>

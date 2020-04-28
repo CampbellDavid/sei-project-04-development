@@ -314,15 +314,11 @@ $gray: #9b9b9b;
 // Group display card
 
 .grp-card-sec {
-	width: 75vw;
+	width: max-content;
 	padding: 10px;
 	border: 1px solid #ffffff;
 	border-radius: 4px;
-	background-color: transparent;
-}
-
-.card-div {
-	background-color: transparent;
+	background-color: #343a4085;
 	color: #ffffff;
 	font-size: 20px;
 }
