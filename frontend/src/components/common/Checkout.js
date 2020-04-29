@@ -63,18 +63,19 @@ class Checkout extends React.Component {
 													<Card.Subtitle className='pt-2 pb-4'>
 														{this.currency.format(item.price)}
 													</Card.Subtitle>
-
-													<div className='center-item-screen'>
-														<Button
-															variant='dark'
-															href={`/events/${item.id}`}
-															className='mr-1'
-														>
-															View Event
-														</Button>
-													</div>
 												</div>
 											</Card.Body>
+											<Card.Footer>
+												<div className='center-item-screen'>
+													<Button
+														variant='dark'
+														href={`/events/${item.id}`}
+														className='mr-1'
+													>
+														View Event
+													</Button>
+												</div>
+											</Card.Footer>
 										</Card>
 									)
 								})}

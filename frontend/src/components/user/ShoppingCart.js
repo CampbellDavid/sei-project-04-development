@@ -76,25 +76,26 @@ class ShoppingCart extends React.Component {
 												<Card.Subtitle className='pt-2 pb-4'>
 													{this.currency.format(item.price)}
 												</Card.Subtitle>
-
-												<div className='center-item-screen'>
-													<Button
-														variant='dark'
-														href={`/events/${item.id}`}
-														className='mr-1'
-													>
-														View Event
-													</Button>
-													<Button
-														name={item.id}
-														onClick={this.remFromShopCart}
-														className='btn btn-danger ml-1'
-													>
-														Remove item
-													</Button>
-												</div>
 											</div>
 										</Card.Body>
+										<Card.Footer>
+											<div className='center-item-screen'>
+												<Button
+													variant='dark'
+													href={`/events/${item.id}`}
+													className='mr-1'
+												>
+													View Event
+												</Button>
+												<Button
+													name={item.id}
+													onClick={this.remFromShopCart}
+													className='btn btn-danger ml-1'
+												>
+													Remove item
+												</Button>
+											</div>
+										</Card.Footer>
 									</Card>
 								)
 							})
