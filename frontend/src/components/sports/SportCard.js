@@ -6,12 +6,14 @@ const SportCard = ({ id, name, image }) => (
 		<Card.Img style={{ height: '50%' }} variant='top' src={image} />
 		<Card.Body>
 			<Card.Title className='text-center text-uppercase'>{name}</Card.Title>
+		</Card.Body>
+		<Card.Footer>
 			<div className='center-item-screen'>
 				<Button variant='dark' href={`sports/${id}`}>
 					View Sport
 				</Button>
 			</div>
-		</Card.Body>
+		</Card.Footer>
 	</Card>
 )
 export default SportCard

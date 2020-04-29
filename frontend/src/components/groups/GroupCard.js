@@ -118,24 +118,26 @@ class GroupCard extends React.Component {
 								<Card className='m-3' style={{ width: '14rem' }}>
 									<Card.Img
 										variant='top'
+										style={{ height: '65%' }}
 										src={attendee.profile_image}
 										alt={attendee.username}
 									/>
 									<Card.Body className='d-flex flex-column'>
 										<div className='mt-auto'>
 											<div className='center-item-screen mb-1'>
-												<Card.Subtitle>
+												<Card.Subtitle className='text-dark'>
 													{attendee.first_name} {attendee.last_name}
 												</Card.Subtitle>
 											</div>
-
-											<div className='center-item-screen'>
-												<Button variant='dark' href={`/user/${attendee.id}`}>
-													View User
-												</Button>
-											</div>
 										</div>
 									</Card.Body>
+									<Card.Footer>
+										<div className='center-item-screen'>
+											<Button variant='dark' href={`/user/${attendee.id}`}>
+												View User
+											</Button>
+										</div>
+									</Card.Footer>
 								</Card>
 							)
 						})}

@@ -35,13 +35,15 @@ const EventCard = ({
 				<Card.Subtitle className='pt-2 pb-2'>
 					{Moment(time_and_date).format('lll')}
 				</Card.Subtitle>
-				<div className='center-item-screen'>
-					<Button variant='dark' href={`events/${id}`}>
-						View Event
-					</Button>
-				</div>
 			</div>
 		</Card.Body>
+		<Card.Footer>
+			<div className='center-item-screen'>
+				<Button variant='dark' href={`events/${id}`}>
+					View Event
+				</Button>
+			</div>
+		</Card.Footer>
 	</Card>
 )
 

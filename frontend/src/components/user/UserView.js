@@ -68,12 +68,14 @@ class UserView extends React.Component {
 												<Card.Title className='text-center text-uppercase'>
 													{item.title}
 												</Card.Title>
+											</Card.Body>
+											<Card.Footer>
 												<div className='center-item-screen'>
 													<Button variant='dark' href={`/events/${item.id}`}>
 														View Event
 													</Button>
 												</div>
-											</Card.Body>
+											</Card.Footer>
 										</Card>
 									))}
 								</div>

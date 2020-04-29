@@ -74,12 +74,14 @@ class SportDisplay extends React.Component {
 													<Card.Title className='text-center text-uppercase'>
 														{event.title}
 													</Card.Title>
+												</Card.Body>
+												<Card.Footer>
 													<div className='center-item-screen'>
 														<Button variant='dark' href={`/events/${event.id}`}>
 															View Event
 														</Button>
 													</div>
-												</Card.Body>
+												</Card.Footer>
 											</Card>
 										)
 									})}
