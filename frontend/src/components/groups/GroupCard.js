@@ -115,7 +115,7 @@ class GroupCard extends React.Component {
 					<div className='row center-item-screen'>
 						{group.attendees.map((attendee, i) => {
 							return (
-								<Card className='m-3' style={{ width: '14rem' }}>
+								<Card key={i} className='m-3' style={{ width: '14rem' }}>
 									<Card.Img
 										variant='top'
 										style={{ height: '65%' }}

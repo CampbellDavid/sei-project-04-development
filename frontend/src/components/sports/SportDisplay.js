@@ -62,9 +62,9 @@ class SportDisplay extends React.Component {
 							<div className='events-section mb-4'>
 								<h3 className='sub-head font mt-3'>Events</h3>
 								<div className='center-item-screen row'>
-									{this.state.sport.events.map((event) => {
+									{this.state.sport.events.map((event, i) => {
 										return (
-											<Card className='m-3' style={{ width: '13rem' }}>
+											<Card key={i} className='m-3' style={{ width: '13rem' }}>
 												<Card.Img
 													style={{ height: '50%' }}
 													variant='top'

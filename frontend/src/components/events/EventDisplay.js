@@ -212,8 +212,8 @@ class EventDisplay extends React.Component {
 								<div className='col-lg-12'>
 									<h3 className='sub-head font mt-3'>Groups</h3>
 									<div className='row center-item-screen'>
-										{filteredGroups.map((group) => (
-											<div className='grp-card-sec m-3'>
+										{filteredGroups.map((group, i) => (
+											<div key={i} className='grp-card-sec m-3'>
 												<GroupCard key={group.id} {...group} />
 											</div>
 										))}

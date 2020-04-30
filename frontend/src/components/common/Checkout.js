@@ -48,9 +48,9 @@ class Checkout extends React.Component {
 						<div className='body-presets'>
 							<h1 className='title-head font text-center m-0'>Checkout</h1>
 							<div className='row center-item-screen'>
-								{user.shopping_cart.map((item) => {
+								{user.shopping_cart.map((item, i) => {
 									return (
-										<Card className='m-3' style={{ width: '18rem' }}>
+										<Card key={i} className='m-3' style={{ width: '18rem' }}>
 											<Card.Img
 												style={{ height: '50%' }}
 												variant='top'

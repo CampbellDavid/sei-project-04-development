@@ -14,7 +14,7 @@ const Home = () => (
 			<img src={Logo} alt='Logo' className='home-logo' />
 		</div>
 		<div className='main-bg'>
-			<div class='container-fluid'>
+			<div className='container-fluid'>
 				<div className='row'>
 					<div className='col-xl-7 p-0'>
 						<Carousel>

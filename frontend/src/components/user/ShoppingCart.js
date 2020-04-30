@@ -61,9 +61,9 @@ class ShoppingCart extends React.Component {
 					<div className='row center-item-screen'>
 						{Auth.isAuthenticated() &&
 						this.state.user.shopping_cart.length !== 0 ? (
-							this.state.user.shopping_cart.map((item) => {
+							this.state.user.shopping_cart.map((item, i) => {
 								return (
-									<Card className='m-3' style={{ width: '18rem' }}>
+									<Card key={i} className='m-3' style={{ width: '18rem' }}>
 										<Card.Img
 											variant='top'
 											style={{ height: '50%' }}

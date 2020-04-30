@@ -57,8 +57,8 @@ class UserView extends React.Component {
 								<h3 className='sub-head font'>Wish List</h3>
 
 								<div className='center-item-screen row'>
-									{user.wish_list.map((item) => (
-										<Card className='m-3' style={{ width: '13rem' }}>
+									{user.wish_list.map((item, i) => (
+										<Card key={i} className='m-3' style={{ width: '13rem' }}>
 											<Card.Img
 												style={{ height: '50%' }}
 												variant='top'
